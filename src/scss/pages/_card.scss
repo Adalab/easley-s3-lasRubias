@@ -1,0 +1,641 @@
+.card__section2 {
+  background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
+}
+
+.section2__list {
+  margin: 0 20px;
+}
+/* Here start DESIGN styles */
+
+.section2__colors--wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  padding-bottom: 8px;
+  justify-content: space-between;
+}
+.formdesign__circle{
+  height: 17px;
+  width: 17px;
+}
+
+.palette__triple--box {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+}
+
+.palette__dimensions {
+  width: 30px;
+  height: 25px;
+}
+
+.palette__green,
+.palette__red,
+.palette__gray {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.palette__green--dark {
+  background-color: $color_green_Dark;
+}
+
+.palette__green--medium {
+  background-color: $color_green_Medium;
+}
+
+.palette__green--light {
+  background-color: $color_green_Light;
+}
+
+.palette__red--dark {
+  background-color: $color_red_Dark;
+}
+
+.palette__red--medium {
+  background-color: $color_red_Medium;
+}
+
+.palette__red--light {
+  background-color: $color_red_Light;
+}
+
+.palette__gray--dark {
+  background-color: $color_gray_Dark;
+}
+
+.palette__gray--medium {
+  background-color: $color_gray_Medium;
+}
+
+.palette__gray--light {
+  background-color: $color_gray_Light;
+}
+
+.fonts__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.fontfamily__types {
+  display: flex;
+  flex-direction: column;
+}
+
+.section2__list--h2 {
+  font-family: $font-family_main;
+  font-weight: $font-weight_semi-bold;
+  font-size: 18px;
+  color: $color_main_gray;
+  text-transform: uppercase;
+}
+
+.icon__card-page {
+  color: $color_main_orange;
+  font-size: 18px;
+}
+
+.section2__design--titles {
+  font-family: $font-family_main;
+  font-weight: $font-weight_medium;
+  font-size: 14px;
+  color: $color_main_gray;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.fontfamily__options {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+}
+
+.ubuntu {
+  font-family: $font-family_option1;
+  font-weight: $font-weight_semi-bold;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.comic-sans {
+  font-family: $font-family_option2;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.montserrat {
+  font-family: $font-family_option3;
+  font-weight: $font-weight_regular;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+/* Here start COMPLETE styles */
+
+.titles__complete-form {
+  padding-top: 10px;
+  padding-bottom: 2px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section2__completeform--input {
+  width: 100%;
+  height: 30px;
+  padding: 2px;
+  border: 1px solid $color_green_Light;
+}
+.formcomplete__container--addimage {
+  display: flex;
+  flex-direction: row;
+}
+.profile__image{
+  background-image: url(../images/default_picture.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.action__hiddenField{
+  display:none;
+}
+.button__add--image {
+  width: 140px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: $color_main_orange;
+  color: $color_main_pureWhite;
+  font-size: 14px;
+  font-family: $font-family_main;
+  margin-right: 20px;
+}
+
+.formcomplete__imagepreview {
+  width: 30px;
+  height: 30px;
+  border: 1px solid $color_green_Light;
+}
+
+.titles__complete-form {
+  font-size: 14px;
+  font-family: $font-family_main;
+  color: $color_main_green;
+}
+
+/* Here start SHARE styles */
+.title__card--created,
+.title__card--link,
+.button__twitter {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+.twitter{
+  text-decoration: none;
+  color:white;
+}
+.button_container {
+  text-align: center;
+}
+.button__create-card {
+  cursor: pointer;
+  width: 220px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: $color_main_orange;
+  color: $color_main_pureWhite;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: $font-family_main;
+  text-transform: uppercase;
+  outline-style: none;
+  transition: background-color 0.3s ease-in-out;
+  margin: 30px auto;
+}
+.button__create-card.active {
+  background-color: $color_main_inactive;
+}
+.create__mesage {
+  height: 0;
+  transition: 0.3s ease-in-out;
+}
+.create__mesage.show {
+  height: 100px;
+  // height: auto;
+}
+
+.button__twitter {
+  cursor: pointer;
+  width: 181px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #00a0f5;
+  color: $color_main_pureWhite;
+  font-size: 14px;
+  font-family: $font-family_main;
+  font-weight: $font-weight_regular;
+  align-items: center;
+  line-height: 20px;
+  margin: 10px auto 30px;
+}
+.fa-twitter {
+  margin-right: 10px;
+}
+.title__card--created {
+  font-family: $font-family_main;
+  font-weight: $font-weight_semi-bold;
+  font-size: 18px;
+  color: $color_main_gray;
+}
+
+.title__card--link {
+  font-family: $font-family_main;
+  font-weight: $font-weight_semi-bold;
+  font-size: 12px;
+  color: $color_main_orange;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Here start COLLAPSIBLES: Design, Complete, Share */
+.section2__list--collapsible {
+  border-bottom: 1px solid $color_main_division;
+  height: 61px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+.section2__list--collapsible.open {
+  .icon__arrow--card-page {
+    transform: rotate(180deg);
+  }
+}
+.first_block.open {
+  height: 341px;
+}
+.second_block.open {
+  height: 630px;
+}
+.third_block.open {
+  height: 180px;
+}
+.third_block.open.add_height {
+  height: 300px;
+}
+.icon__arrow--card-page {
+  transition: 0.3s;
+  font-size: 18px;
+  color: $color_main_gray;
+}
+.collapsible {
+  cursor: pointer;
+  padding: 18px 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+/* Here start PROFILE styles */
+.header-logo {
+  width: 240px;
+  height: 50px;
+  margin: 30px auto;
+
+  .logo_awesome {
+    margin: 0;
+    width: 200px;
+  }
+}
+
+.profile {
+  width: 100%;
+  height: 460px;
+  background: linear-gradient(#a6f3ba, #4dcea6);
+  margin: 0 auto;
+  font-family: $font-family_option2;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.profile__container {
+  width: 240px;
+  margin: 0 auto;
+}
+
+.profile__action {
+  width: 75px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: transparent;
+  border: 1px solid $color_main_pureWhite;
+  border-radius: 15px;
+  margin: 10px 0 20px;
+  color: $color_main_pureWhite;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px 0px rgba(2, 158, 158, 0.2);
+  &:hover {
+    color: $color_green_Light;
+    background-color: $color_main_pureWhite;
+    box-shadow: 0px 5px 5px 0px rgba(2, 158, 158, 0.2);
+    transform: translateY(-3px);
+  }
+}
+
+.profile__action-text {
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+.profile__data {
+  width: 240px;
+  height: 370px;
+  background-color: $color_main_pureWhite;
+  border-radius: 2px;
+  margin: 0 auto 30px;
+  box-shadow: 0px 2px 40px 0px #65b39f;
+  overflow: hidden;
+}
+
+.profile__data-top {
+  display: flex;
+}
+
+.profile__vertical-line {
+  width: 5px;
+  height: 40px;
+  background-color: $color_green_Light;
+  margin: 25px 15px 10px 0;
+}
+
+.profile__data-group {
+  margin-top: 25px;
+}
+
+.profile__name {
+  font-weight: $font-weight_bold;
+  color: $color_green_Dark;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.profile__profession {
+  color: $color_main_gray;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 5px;
+}
+
+.profile__picture-container {
+  width: 240px;
+  height: 200px;
+}
+
+.profile__picture {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+/* Here starts list of contact icons for profile section*/
+.list_contact {
+  display: flex;
+  margin: 10px auto 10px 20px;
+}
+
+.border_bottom {
+  border-bottom: 2px solid $color_green_Medium;
+  opacity: 0.2;
+}
+
+.icon_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid $color_green_Light;
+  border-radius: 50%;
+  margin-right: 10px;
+
+  .ico {
+    font-size: 18px;
+    color: $color_main_green;
+  }
+}
+
+/* Here starts list of skills icons for profile section*/
+
+.list_skills {
+  display: flex;
+  margin: 10px;
+}
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: $font-family_main;
+  font-weight: $font-weight_regular;
+  background-color: $color_green_Medium;
+  margin-right: 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  height: 18px;
+}
+
+.skill1 {
+  width: 46px;
+}
+
+.skill2 {
+  width: 33px;
+}
+
+.skill3 {
+  width: 44px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: $color_green_Medium;
+}
+
+/* Green style for profile card*/
+
+.green {
+  .profile__name {
+    color: $color_green_Dark;
+  }
+
+  .ico {
+    color: $color_green_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_green_Medium;
+  }
+
+  .skill {
+    background-color: $color_green_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_green_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_green_Light;
+  }
+}
+
+/* Red style for profile card*/
+
+.red {
+  .profile__name {
+    color: $color_red_Dark;
+  }
+
+  .ico {
+    color: $color_red_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_red_Medium;
+  }
+
+  .skill {
+    background-color: $color_red_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_red_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_red_Light;
+  }
+}
+
+/* Gray style for profile card*/
+.gray {
+  .profile__name {
+    color: $color_gray_Dark;
+  }
+
+  .ico {
+    color: $color_gray_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_gray_Medium;
+  }
+
+  .skill {
+    background-color: $color_gray_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_gray_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_gray_Light;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .main__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
+  }
+  .profile {
+    width: 100%;
+    height: 815px;
+    margin: 0 0 0 30px;
+    border-radius: 5px;
+    order: 1;
+    display: flex;
+    align-items: center;
+  }
+  .card__section2 {
+    min-width: 350px;
+  }
+  .section2__list {
+    margin: 0;
+  }
+}
+
+/* Font styles for profile card*/
+
+.font-ubuntu {
+
+  .profile__name {
+    font-family: $font-family_option1;
+  }
+  .profile__profession {
+    font-family: $font-family_option1;
+  }
+} 
+  
+.font-comic {
+  .profile__name {
+    font-family: $font-family_option2;
+  }
+  .profile__profession {
+    font-family: $font-family_option2;
+  }
+} 
+  
+.font-montserrat {
+  .profile__name {
+    font-family: $font-family_option3;
+  }
+  .profile__profession {
+    font-family: $font-family_option3;
+  }
+}
+.list_item {
+  list-style-type: none; 
+  font-family:"Open Sans", sans-serif; 
+  font-weight: 400; 
+  font-size: 13px; 
+  color: white;
+  background-color: #438792;
+  width: 80px;
+  border-radius: 4px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+}
+.list_item.green {
+  background-color: $color_green_Medium;
+}
+.list_item.red {
+  background-color: $color_red_Light;
+}
+.list_item.gray {
+  background-color: $color_gray_Light;
+}
+
+.list_skills.green .list_item {
+  background-color: $color_green_Medium;
+}
+.list_skills.red .list_item {
+  background-color: $color_red_Light;
+}
+.list_skills.gray .list_item {
+  background-color: $color_gray_Light;
+}

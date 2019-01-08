@@ -1,0 +1,17 @@
+@import "core/variables";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body-index {
+  background-color: $color_main_boneWhite;
+}
+
+@import "layout/header";
+@import "pages/home";
+@import "layout/footer";
+
+/*CARD PAGE*/
+@import "pages/card";
