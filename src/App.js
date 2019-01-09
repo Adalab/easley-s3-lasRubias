@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './scss/main.scss';
 import logo from './images/descarga.svg';
-import logoUndefined from './images/undefined-logo.svg';
-import logoAdalab from './images/logo-adalab.svg';
+import Footer from './components/Footer';
+// import PropTypes from "prop-types";
+// import logoUndefined from './images/undefined-logo.svg';
+// import logoAdalab from './images/logo-adalab.svg';
 
 class App extends Component {
   render() {
@@ -182,13 +184,8 @@ class App extends Component {
             </ul>
           </section>
         </main>
-        <footer class="footer-index @@footer">
-          <div class="copyright-index">Awesome profile cards @2018</div>
-          <div class="footer__logos">
-            <div class="footer__logo"><img class="logo-undefined" src={logoUndefined} alt="Undefined logo" /></div>
-            <a class="footer__logo" href="https://adalab.es/"><img class="logo-adalab" src={logoAdalab} alt="Adalab logo" /></a>
-          </div>
-        </footer>
+        <Footer />
+        
 
       </div>
 
