@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './scss/main.scss';
 import logo from './images/descarga.svg';
 import logoUndefined from './images/undefined-logo.svg';
 import logoAdalab from './images/logo-adalab.svg';
+import Header from './components/Header.js';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <header class="header-index">
-          <a class="header-logo" href="index.html">
-            <img class="logo_awesome" src={logo} />
-          </a>
-        </header>
+        <Header logo = {logo}/>
         <main class="main__container">
           <section class="profile">
             <div class="profile__container">
