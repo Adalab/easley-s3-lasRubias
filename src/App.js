@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './scss/main.scss';
 import logo from './images/descarga.svg';
 import Footer from './components/Footer';
@@ -7,6 +6,7 @@ import Footer from './components/Footer';
 import logoUndefined from './images/undefined-logo.svg';
 import logoAdalab from './images/logo-adalab.svg';
 import Form from './components/Form';
+import Header from './components/Header';
 import Card from './components/Card';
 
 class App extends Component {
