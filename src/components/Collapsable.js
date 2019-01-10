@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 class Collapsable extends React.Component {
     render () {
@@ -13,6 +14,13 @@ class Collapsable extends React.Component {
             </li>
         );
     }
+}
+
+Collapsable.PropTypes ={
+    block: PropTypes.string.isRequired,
+    numberChild: PropTypes.string.isRequired,
+    icoSection: PropTypes.string.isRequired,
+    titleSection: PropTypes.string.isRequired,
 }
 
 export default Collapsable;
