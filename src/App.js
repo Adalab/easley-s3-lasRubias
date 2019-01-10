@@ -12,8 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-        <Header logo = {logo}/>
+        <Header logo={logo} />
         <main className="main__container">
           <Card />
           <section className="card__section2">
@@ -147,9 +146,9 @@ class App extends Component {
             </ul>
           </section>
         </main>
-        <Footer 
-            logoTeam={logoUndefined}
-            logoAdalab={logoAdalab}
+        <Footer
+          logoTeam={logoUndefined}
+          logoAdalab={logoAdalab}
         />
       </div>
 
