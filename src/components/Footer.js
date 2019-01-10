@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import logoUndefined from '../images/undefined-logo.svg';
-import logoAdalab from '../images/logo-adalab.svg';
+import PropTypes from "prop-types";
 
 
 class Footer extends Component {
@@ -10,10 +9,10 @@ class Footer extends Component {
           <div className="copyright-index">Awesome profile cards @2018</div>
           <div className="footer__logos">
             <div className="footer__logo">
-                <img className="logo-undefined" src={logoUndefined} alt="Undefined logo" />
+                <img className="logo-undefined" src={this.props.logoTeam} alt="Undefined logo" />
             </div>
             <a class="footer__logo" href="https://adalab.es/">
-                <img className="logo-adalab" src={logoAdalab} alt="Adalab logo" />
+                <img className="logo-adalab" src={this.props.logoAdalab} alt="Adalab logo" />
             </a>
           </div>
         </footer>
@@ -21,4 +20,8 @@ class Footer extends Component {
     }
 }
 
+Footer.PropTypes ={
+    logoTeam: PropTypes.string.isRequired,
+    logoAdalab: PropTypes.string.isRequired
+}
 export default Footer;

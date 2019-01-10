@@ -4,8 +4,8 @@ import './scss/main.scss';
 import logo from './images/descarga.svg';
 import Footer from './components/Footer';
 // import PropTypes from "prop-types";
-// import logoUndefined from './images/undefined-logo.svg';
-// import logoAdalab from './images/logo-adalab.svg';
+import logoUndefined from './images/undefined-logo.svg';
+import logoAdalab from './images/logo-adalab.svg';
 
 class App extends Component {
   render() {
@@ -184,9 +184,10 @@ class App extends Component {
             </ul>
           </section>
         </main>
-        <Footer />
-        
-
+        <Footer 
+            logoTeam={logoUndefined}
+            logoAdalab={logoAdalab}
+        />
       </div>
 
     );
