@@ -7,6 +7,7 @@ class Form extends React.Component {
         return (
           <section className="card__section2">
           <ul className="section2__list">
+          <Collapsable/>
             <li className="section2__list--collapsible first_block open">
               <div id="first_child" className="collapsible">
                 <h2 className="section2__list--h2"><i className="far fa-object-ungroup icon__card-page"></i> Design</h2>
