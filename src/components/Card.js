@@ -3,38 +3,38 @@ import React, { Component } from 'react';
 class Card extends Component {
     render() {
         return (
-            <section class="profile">
-                <div class="profile__container">
-                    <button class="profile__action">
-                        <i class="far fa-trash-alt"></i>
-                        <span class="profile__action-text">Reset</span>
+            <section className="profile">
+                <div className="profile__container">
+                    <button className="profile__action">
+                        <i className="far fa-trash-alt"></i>
+                        <span className="profile__action-text">Reset</span>
                     </button>
-                    <div class="profile__data">
-                        <div class="profile__data-top">
-                            <div class="profile__vertical-line"></div>
-                            <div class="profile__data-group">
-                                <div id="name" class="profile__name">Name Surname</div>
-                                <div id="job-card" class="profile__profession">Job</div>
+                    <div className="profile__data">
+                        <div className="profile__data-top">
+                            <div className="profile__vertical-line"></div>
+                            <div className="profile__data-group">
+                                <div id="name" className="profile__name">Name Surname</div>
+                                <div id="job-card" className="profile__profession">Job</div>
                             </div>
                         </div>
-                        <div class="profile__picture-container profile__image">
+                        <div className="profile__picture-container profile__image">
                         </div>
-                        <ul class="list_contact">
-                            <li class="icon_border">
-                                <a id="tel-card" class="icon-link" href="" target="_blank"><i class="fas fa-mobile-alt ico"></i></a>
+                        <ul className="list_contact">
+                            <li className="icon_border">
+                                <a id="tel-card" className="icon-link" href="" target="_blank"><i className="fas fa-mobile-alt ico"></i></a>
                             </li>
-                            <li class="icon_border">
-                                <a id="email-card" class="icon-link" href="" target="_blank"><i class="far fa-envelope ico"></i></a>
+                            <li className="icon_border">
+                                <a id="email-card" className="icon-link" href="" target="_blank"><i className="far fa-envelope ico"></i></a>
                             </li>
-                            <li class="icon_border">
-                                <a id="linkedin-card" class="icon-link" href="" target="_blank"><i class="fab fa-linkedin-in ico"></i></a>
+                            <li className="icon_border">
+                                <a id="linkedin-card" className="icon-link" href="" target="_blank"><i className="fab fa-linkedin-in ico"></i></a>
                             </li>
-                            <li class="icon_border">
-                                <a id="github-card" class="icon-link" href="" target="_blank"><i class="fab fa-github-alt ico"></i></a>
+                            <li className="icon_border">
+                                <a id="github-card" className="icon-link" href="" target="_blank"><i className="fab fa-github-alt ico"></i></a>
                             </li>
                         </ul>
-                        <div class="border_bottom"></div>
-                        <ul id="container-checkboxes-card" class="list_skills"></ul>
+                        <div className="border_bottom"></div>
+                        <ul id="container-checkboxes-card" className="list_skills"></ul>
                     </div>
                 </div>
             </section>
