@@ -8,10 +8,11 @@ class Collapsable extends React.Component {
                 <h2 className="section2__list--h2"><i className={this.props.icoSection}></i> {this.props.titleSection}</h2>
                 <div><i className="fas fa-chevron-down icon__arrow--card-page"></i></div>
               </div>
-              <div className="content">
-                
-              </div>
+              {this.props.children}
+              
             </li>
         );
     }
 }
+
+export default Collapsable;

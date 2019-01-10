@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import Collapsable from './Collapsable';
 
 
 class Form extends React.Component {
@@ -7,13 +8,13 @@ class Form extends React.Component {
         return (
           <section className="card__section2">
           <ul className="section2__list">
-          <Collapsable/>
-            <li className="section2__list--collapsible first_block open">
-              <div id="first_child" className="collapsible">
-                <h2 className="section2__list--h2"><i className="far fa-object-ungroup icon__card-page"></i> Design</h2>
-                <div><i className="fas fa-chevron-down icon__arrow--card-page"></i></div>
-              </div>
-              <div className="content">
+          <Collapsable
+           block="first_block open"
+           numberChild="first_child"
+           icoSection= "far fa-object-ungroup icon__card-page"
+           titleSection= "design"
+          >
+          <div className="content">
                 <div className="section2__colors--wrapper">
                   <div className="section2__design--titles">Colors</div>
                   <form id="color-form">
@@ -70,13 +71,14 @@ class Form extends React.Component {
                   </div>
                 </div>
               </div>
-            </li>
-            <li className="section2__list--collapsible second_block">
-              <div id="second_child" className="collapsible">
-                <h2 className="section2__list--h2"><i className="fas fa-keyboard icon__card-page"></i> Complete</h2>
-                <div><i className="fas fa-chevron-down icon__arrow--card-page"></i></div>
-              </div>
-              <div className="content">
+          </Collapsable>
+          <Collapsable
+           block="second_block"
+           numberChild="second_child"
+           icoSection= "fas fa-keyboard icon__card-page"
+           titleSection= "complete"
+          >
+          <div className="content">
                 <form action="" id="form">
                   <div className="titles__complete-form"><label for="email">Full name</label></div>
                   <div><input className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input"
@@ -113,13 +115,16 @@ class Form extends React.Component {
                   <div id="container-checkboxes" className="titles__complete-form"></div>
                 </form>
               </div>
-            </li>
-            <li className="section2__list--collapsible third_block">
-              <div id="third_child" className="collapsible">
-                <h2 className="section2__list--h2"><i className="fas fa-share-alt icon__card-page"></i> Share</h2>
-                <div><i className="fas fa-chevron-down icon__arrow--card-page"></i></div>
-              </div>
-              <div className="content button_container">
+
+          </Collapsable>
+            
+          <Collapsable
+           block="third_block"
+           numberChild="third_child"
+           icoSection="fas fa-share-alt icon__card-page"
+           titleSection= "share"
+          >
+          <div className="content button_container">
                 <button className="button__create-card">
                   <i className="far fa-id-card"></i>
                   <a> Create visit card</a>
@@ -133,7 +138,7 @@ class Form extends React.Component {
                   </button>
                 </div>
               </div>
-            </li>
+          </Collapsable>
           </ul>
         </section>
         );
