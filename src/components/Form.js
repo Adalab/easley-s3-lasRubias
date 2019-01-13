@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import PropTypes from "prop-types";
 import Collapsable from './Collapsable';
+import StyleContainer from './StyleContainer';
 
 
-class Form extends React.Component {
+class Form extends Component {
     render () {
         return (
           <section className="card__section2">
@@ -14,63 +15,8 @@ class Form extends React.Component {
            icoSection= "far fa-object-ungroup icon__card-page"
            titleSection= "design"
           >
-          <div className="content">
-                <div className="section2__colors--wrapper">
-                  <div className="section2__design--titles">Colors</div>
-                  <form id="color-form">
-                    <label for="palette__green" className="palette__green">
-                      <input checked="checked" className="formdesign__circle" id="palette__green" type="radio"
-                        value="color__green" name="palette__color" />
-                      <div className="palette__triple--box">
-                        <div className="palette__dimensions palette__green--dark"></div>
-                        <div className="palette__dimensions palette__green--medium"></div>
-                        <div className="palette__dimensions palette__green--light"></div>
-                      </div>
-                    </label>
-                    <label for="palette__red" className="palette__red">
-                      <input className="formdesign__circle" id="palette__red" type="radio" value="color__red"
-                        name="palette__color" />
-                      <div className="palette__triple--box">
-                        <div class="palette__dimensions palette__red--dark"></div>
-                        <div className="palette__dimensions palette__red--medium"></div>
-                        <div className="palette__dimensions palette__red--light"></div>
-                      </div>
-                    </label>
-                    <label for="palette__gray" className="palette__gray">
-                      <input className="formdesign__circle" id="palette__gray" type="radio" value="color__gray"
-                        name="palette__color" />
-                      <div className="palette__triple--box">
-                        <div className="palette__dimensions palette__gray--dark"></div>
-                        <div className="palette__dimensions palette__gray--medium"></div>
-                        <div className="palette__dimensions palette__gray--light"></div>
-                      </div>
-                    </label>
-                  </form>
-                </div>
+         <StyleContainer />
 
-                <div className="fonts__container">
-                  <div className="section2__design--titles">Fonts</div>
-                  <div className="fontfamily__types">
-                    <form id="font-form">
-                      <label for="font__option--1" className="fontfamily__options">
-                        <input className="formdesign__circle" id="font__option--1" type="radio" value="Ubuntu"
-                          name="fontfamily__option" />
-                        <span className="ubuntu">Ubuntu</span>
-                      </label>
-                      <label for="font__option--2" className="fontfamily__options">
-                        <input checked="checked" className="formdesign__circle" id="font__option--2" type="radio"
-                          value="Comic Sans" name="fontfamily__option" />
-                        <span className="comic-sans">Comic Sans</span>
-                      </label>
-                      <label for="font__option--3" className="fontfamily__options">
-                        <input className="formdesign__circle" id="font__option--3" type="radio" value="Montserrat"
-                          name="fontfamily__option" />
-                        <span className="montserrat">Montserrat</span>
-                      </label>
-                    </form>
-                  </div>
-                </div>
-              </div>
           </Collapsable>
           <Collapsable
            block="second_block"
