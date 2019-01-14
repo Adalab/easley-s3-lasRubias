@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Card extends Component {
     render() {
+        console.log(this.props);
         return (
             <section className="profile">
                 <div className="profile__container">
@@ -13,8 +14,8 @@ class Card extends Component {
                         <div className="profile__data-top">
                             <div className="profile__vertical-line"></div>
                             <div className="profile__data-group">
-                                <div id="name" className="profile__name">Name Surname</div>
-                                <div id="job-card" className="profile__profession">Job</div>
+        <div id="name" className="profile__name">{this.props.data.name}</div>
+                                <div id="job-card" className="profile__profession">{this.props.data.job}</div>
                             </div>
                         </div>
                         <div className="profile__picture-container profile__image">

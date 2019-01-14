@@ -10,13 +10,30 @@ import Header from './components/Header';
 import Card from './components/Card';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      dataObject: {
+        'palette': '2',
+        'typography': '2',
+        'name': 'Name Surname',
+        'job': 'Job',
+        'phone': '+34 678 939 435',
+        'email': 'example@gmail.com',
+        'linkedin': '@example',
+        'github': 'example',
+        'photo': '',
+        'skills': ['', '', '']
+      }
+    }
+  } 
   render() {
     return (
       <div>
         <Header logo={logo} />
         <main className="main__container">
-          <Card />
-          <Form />
+          <Card data={this.state.dataObject}/>
+          <Form data={this.state.dataObject}/>
         </main>
         <Footer
           logoTeam={logoUndefined}

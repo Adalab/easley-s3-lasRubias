@@ -6,6 +6,8 @@ import StyleContainer from './StyleContainer';
 
 class Form extends Component {
     render () {
+      console.log(this.props);
+      const dataObject = this.props.data;
         return (
           <section className="card__section2">
           <ul className="section2__list">
@@ -15,7 +17,7 @@ class Form extends Component {
            icoSection= "far fa-object-ungroup icon__card-page"
            titleSection= "design"
           >
-         <StyleContainer />
+         <StyleContainer dataObject = {dataObject}/>
 
           </Collapsable>
           <Collapsable

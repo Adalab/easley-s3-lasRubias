@@ -8,10 +8,14 @@ import Fonts from './Fonts';
 
 class StyleContainer extends Component {
     render() {
+        // console.log(this.props);
+        const colors = this.props.dataObject.palette;
+        const fonts = this.props.dataObject.typography;
+        // console.log(colors,  fonts);
         return (
             <div className="content">
-                <Palettes />
-                <Fonts />
+                <Palettes colors={colors} />
+                <Fonts fonts={fonts} />
             </div>
         );
     }
