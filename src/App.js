@@ -10,20 +10,39 @@ import Header from './components/Header';
 import Card from './components/Card';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      skills: [],
+    }
+    this.getSkills();
+  }
+
+  getSkills() {
+    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
+      .then(response => response.json())
+      .then(dataSkills => this.setState(
+        {
+          skills: dataSkills.skills
+        }
+      ))
+    }
+
   render() {
     return (
       <div>
         <Header logo={logo} />
         <main className="main__container">
           <Card />
-          <Form />
+          <Form
+            skills={this.state.skills}
+          />
         </main>
         <Footer
           logoTeam={logoUndefined}
           logoAdalab={logoAdalab}
         />
-      </div>
-
+      </div >
     );
   }
 }
