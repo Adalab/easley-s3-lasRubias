@@ -14,8 +14,10 @@ class App extends Component {
     super(props);
     this.state = {
       skills: [],
+      selectedSkills: []
     }
     this.getSkills();
+    this.handleChange = this.handleChange.bind(this);
   }
 
   getSkills() {
@@ -28,6 +30,20 @@ class App extends Component {
       ))
     }
 
+    handleChange(event) {
+      const skillValue = event.target.value;
+      this.setState((prevState) => {
+        let auxList = prevState.selectedSkills;
+        if(auxList.length < 3){
+          auxList.push(skillValue);
+        }
+        return {
+          selectedSkills: auxList
+        }
+      })
+      console.log(this.state.selectedSkills);
+    }
+
   render() {
     return (
       <div>
@@ -36,6 +52,7 @@ class App extends Component {
           <Card />
           <Form
             skills={this.state.skills}
+            handleChange={this.handleChange}
           />
         </main>
         <Footer

@@ -59,10 +59,9 @@ class Form extends Component {
                   id="github-input" type="email" name="github" required /></div>
 
                 <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
-                <div id="container-checkboxes" className="titles__complete-form">
+                <div id="container-checkboxes" className="titles__complete-form" onChange={this.props.handleChange}>
                   <ul>
-                    {this.props.skills.map(skill =>
-                      (
+                    {this.props.skills.map(skill => (
                       <ListSkills skill={skill} />
                       )
                     )}
