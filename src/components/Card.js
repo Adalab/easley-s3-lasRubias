@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
-    choosePalette(){
+    chosenPalette(){
         const palette = this.props.data.palette;
         let colorCard = "";
         if(palette==="1"){
@@ -12,6 +12,19 @@ class Card extends Component {
             colorCard = "grey";
         }
         return colorCard;
+    }
+
+    chosenFont(){
+        const font = this.props.data.typography;
+        let fontCard = "";
+        if(font==="1"){
+            fontCard = "font-ubuntu";
+        }else if (font==="2"){
+            fontCard = "font-comic";
+        }else{
+            fontCard = "font-montserrat";
+        }
+        return fontCard;
     }
     
     render() {
@@ -24,10 +37,10 @@ class Card extends Component {
                         <i className="far fa-trash-alt"></i>
                         <span className="profile__action-text">Reset</span>
                     </button>
-                    <div className={`profile__data ${this.choosePalette()}`}>
+                    <div className={`profile__data ${this.chosenPalette()}`}>
                         <div className="profile__data-top">
                             <div className="profile__vertical-line"></div>
-                            <div className="profile__data-group">
+                            <div className={`profile__data-group ${this.chosenFont()}`}>
                                 <div id="name" className="profile__name">{data.name}</div>
                                 <div id="job-card" className="profile__profession">{data.job}</div>
                             </div>
