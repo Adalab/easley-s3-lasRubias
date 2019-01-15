@@ -41,24 +41,24 @@ class Card extends Component {
                         <div className="profile__data-top">
                             <div className="profile__vertical-line"></div>
                             <div className={`profile__data-group ${this.chosenFont()}`}>
-                                <div id="name" className="profile__name">{data.name}</div>
-                                <div id="job-card" className="profile__profession">{data.job}</div>
+                                <div id="name" className="profile__name">{data.name || "Name Surname"}</div>
+                                <div id="job-card" className="profile__profession">{data.job || "Job"}</div>
                             </div>
                         </div>
                         <div className="profile__picture-container profile__image">
                         </div>
                         <ul className="list_contact">
                             <li className="icon_border">
-                                <a id="tel-card" className="icon-link" href={`${data.phone}`} target="_blank"><i className="fas fa-mobile-alt ico"></i></a>
+                                <a id="tel-card" className="icon-link" href={`tel:${data.phone}`} target="_blank"><i className="fas fa-mobile-alt ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="email-card" className="icon-link" href={`${data.email}`} target="_blank"><i className="far fa-envelope ico"></i></a>
+                                <a id="email-card" className="icon-link" href={`mailto:${data.email}`} target="_blank"><i className="far fa-envelope ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="linkedin-card" className="icon-link" href={`${data.linkedin}`} target="_blank"><i className="fab fa-linkedin-in ico"></i></a>
+                                <a id="linkedin-card" className="icon-link" href={`https://www.linkedin.com/in/${data.linkedin}`} target="_blank"><i className="fab fa-linkedin-in ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="github-card" className="icon-link" href={`${data.github}`} target="_blank"><i className="fab fa-github-alt ico"></i></a>
+                                <a id="github-card" className="icon-link" href={`https://github.com/${data.github}`} target="_blank"><i className="fab fa-github-alt ico"></i></a>
                             </li>
                         </ul>
                         <div className="border_bottom"></div>

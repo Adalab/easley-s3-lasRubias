@@ -29,12 +29,11 @@ class Form extends Component {
           <div className="content">
                 <form action="" id="form">
                   <div className="titles__complete-form"><label for="email">Full name</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input"
-                    type="text" name="name" required /></div>
+                  <div><input className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">Job position</label></div>
                   <div><input className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
-                    type="text" name="job" required /></div>
+                    type="text" name="job" value={`${dataObject.job}`} required  /></div>
 
                   <div className="titles__complete-form"><label for="image">Profile image</label></div>
                   <div className="formcomplete__container--addimage">
@@ -45,19 +44,19 @@ class Form extends Component {
 
                   <div className="titles__complete-form"><label for="email">Email</label></div>
                   <div><input className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
-                    type="email" name="email" required /></div>
+                    type="email" name="email" value={`${dataObject.email}`} required /></div>
 
                   <div className="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
                   <div><input className="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
-                    type="tel" name="telf_movil" pattern="^6[0-9]{8}$" required /></div>
+                    type="tel" name="telf_movil" pattern="^6[0-9]{8}$"value={`${dataObject.phone}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">LinkedIn</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: linkedin.com/in/sally-hill"
-                    id="linkedin-input" type="email" name="linkedin" required /></div>
+                  <div><input className="section2__completeform--input" placeholder="Ex: sally-hill"
+                    id="linkedin-input" type="email" name="linkedin" value={`${dataObject.linkedin}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">GitHub</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: github.com/sally-hill"
-                    id="github-input" type="email" name="github" required /></div>
+                  <div><input className="section2__completeform--input" placeholder="Ex: sally-hill"
+                    id="github-input" type="email" name="github" value={`${dataObject.github}`}required /></div>
 
                   <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
                   <div id="container-checkboxes" className="titles__complete-form"></div>

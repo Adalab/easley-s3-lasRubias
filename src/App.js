@@ -16,12 +16,12 @@ class App extends Component {
       dataObject: {
         'palette': '2',
         'typography': '1',
-        'name': 'Name Surname',
-        'job': 'Job',
-        'phone': '+34 678 939 435',
-        'email': 'example@gmail.com',
-        'linkedin': '@example',
-        'github': 'example',
+        'name': '',
+        'job': '',
+        'phone': '',
+        'email': '',
+        'linkedin': '',
+        'github': '',
         'photo': '',
         'skills': ['', '', '']
       }
