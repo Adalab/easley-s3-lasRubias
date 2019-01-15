@@ -32,9 +32,12 @@ class App extends Component {
 
     handleChange(event) {
       const skillValue = event.target.value;
+      if (this.state.selectedSkills.length === 3) {
+        event.target.checked = false;
+      }
       this.setState((prevState) => {
         let auxList = prevState.selectedSkills;
-        if(auxList.length < 3){
+        if(auxList.length < 3) {
           auxList.push(skillValue);
         }
         console.log(auxList);
