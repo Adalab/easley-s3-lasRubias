@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from "prop-types";
 import Collapsable from './Collapsable';
 import StyleContainer from './StyleContainer';
+import ListSkills from './ListSkills';
 
 
 class Form extends Component {
@@ -60,9 +61,10 @@ class Form extends Component {
                 <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
                 <div id="container-checkboxes" className="titles__complete-form">
                   <ul>
-                    {this.props.skills.map(skill => (
-                      <li>{skill}</li>
-                    )
+                    {this.props.skills.map(skill =>
+                      (
+                      <ListSkills skill={skill} />
+                      )
                     )}
                   </ul>
 
