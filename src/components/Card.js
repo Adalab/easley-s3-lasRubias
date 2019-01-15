@@ -49,16 +49,16 @@ class Card extends Component {
                         </div>
                         <ul className="list_contact">
                             <li className="icon_border">
-                                <a id="tel-card" className="icon-link" href="" target="_blank"><i className="fas fa-mobile-alt ico"></i></a>
+                                <a id="tel-card" className="icon-link" href={`${data.phone}`} target="_blank"><i className="fas fa-mobile-alt ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="email-card" className="icon-link" href="" target="_blank"><i className="far fa-envelope ico"></i></a>
+                                <a id="email-card" className="icon-link" href={`${data.email}`} target="_blank"><i className="far fa-envelope ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="linkedin-card" className="icon-link" href="" target="_blank"><i className="fab fa-linkedin-in ico"></i></a>
+                                <a id="linkedin-card" className="icon-link" href={`${data.linkedin}`} target="_blank"><i className="fab fa-linkedin-in ico"></i></a>
                             </li>
                             <li className="icon_border">
-                                <a id="github-card" className="icon-link" href="" target="_blank"><i className="fab fa-github-alt ico"></i></a>
+                                <a id="github-card" className="icon-link" href={`${data.github}`} target="_blank"><i className="fab fa-github-alt ico"></i></a>
                             </li>
                         </ul>
                         <div className="border_bottom"></div>
