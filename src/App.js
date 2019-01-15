@@ -37,11 +37,11 @@ class App extends Component {
         if(auxList.length < 3){
           auxList.push(skillValue);
         }
+        console.log(auxList);
         return {
           selectedSkills: auxList
         }
       })
-      console.log(this.state.selectedSkills);
     }
 
   render() {
@@ -49,7 +49,7 @@ class App extends Component {
       <div>
         <Header logo={logo} />
         <main className="main__container">
-          <Card />
+          <Card skills={this.state.selectedSkills}/>
           <Form
             skills={this.state.skills}
             handleChange={this.handleChange}

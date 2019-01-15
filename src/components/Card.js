@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../scss/main.scss';
 
 class Card extends Component {
     render() {
@@ -34,7 +35,11 @@ class Card extends Component {
                             </li>
                         </ul>
                         <div className="border_bottom"></div>
-                        <ul id="container-checkboxes-card" className="list_skills"></ul>
+                        <ul id="container-checkboxes-card" className="list_skills">
+                            {this.props.skills.map(skill => (
+                                <li className='list_item'>{skill}</li> )
+                            )}
+                            </ul>
                     </div>
                 </div>
             </section>
