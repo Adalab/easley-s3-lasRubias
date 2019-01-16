@@ -13,8 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skills: [],
-      selectedSkills: []
+      allSkills: [],
+      skills: []
     }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
@@ -25,55 +25,54 @@ class App extends Component {
       .then(response => response.json())
       .then(dataSkills => this.setState(
         {
-          skills: dataSkills.skills
+          allSkills: dataSkills.skills
         }
       ))
   }
-
+  
+//metodo para seleccionar y des-seleccionar las skills
   handleChange(event) {
     const skillValue = event.target.value;
-    if (this.state.selectedSkills.length === 3) {
+    if (this.state.skills.length === 3) {
       event.target.checked = false;
     }
-      this.setState((prevState) => {
-        let auxList = prevState.selectedSkills;
+    this.setState((prevState) => {
+      let auxList = prevState.skills;
+      let index = auxList.indexOf(skillValue);
+      console.log(index);
 
-        let index = auxList.indexOf(skillValue);
-
-        console.log(index);
-
-        if (index > -1) {
-          auxList.splice(index, 1);
-        } else {
-          if (auxList.length < 3) {
-            auxList.push(skillValue);
-          }
+      if (index > -1) {
+        auxList.splice(index, 1);
+      } else {
+        if (auxList.length < 3) {
+          auxList.push(skillValue);
         }
-        console.log(auxList);
-        return {
-          selectedSkills: auxList
-        }
-      })
-    }
-
-    render() {
-      return (
-        <div>
-          <Header logo={logo} />
-          <main className="main__container">
-            <Card skills={this.state.selectedSkills} />
-            <Form
-              skills={this.state.skills}
-              handleChange={this.handleChange}
-            />
-          </main>
-          <Footer
-            logoTeam={logoUndefined}
-            logoAdalab={logoAdalab}
-          />
-        </div >
-      );
-    }
+      }
+      console.log(auxList);
+      return {
+        skills: auxList
+      }
+    })
   }
 
-  export default App;
+  render() {
+    return (
+      <div>
+        <Header logo={logo} />
+        <main className="main__container">
+          <Card skills={this.state.skills} />
+          <Form
+            skills={this.state.allSkills}
+            handleChange={this.handleChange}
+          />
+        </main>
+        <Footer
+          logoTeam={logoUndefined}
+          logoAdalab={logoAdalab}
+        />
+      </div >
+    );
+  }
+}
+
+export default App;
