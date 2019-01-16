@@ -22,7 +22,7 @@ class Card extends Component {
             fontCard = "font-ubuntu";
         }else if (font==="2"){
             fontCard = "font-comic";
-        }else{
+        }else if (font==="3"){
             fontCard = "font-montserrat";
         }
         return fontCard;

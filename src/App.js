@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       allSkills: [],
       dataObject: {
-        'palette': '2',
+        'palette': '3',
         'typography': '1',
         'name': '',
         'job': '',
