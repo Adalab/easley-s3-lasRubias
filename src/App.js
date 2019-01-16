@@ -28,17 +28,26 @@ class App extends Component {
           skills: dataSkills.skills
         }
       ))
-    }
+  }
 
-    handleChange(event) {
-      const skillValue = event.target.value;
-      if (this.state.selectedSkills.length === 3) {
-        event.target.checked = false;
-      }
+  handleChange(event) {
+    const skillValue = event.target.value;
+    if (this.state.selectedSkills.length === 3) {
+      event.target.checked = false;
+    }
       this.setState((prevState) => {
         let auxList = prevState.selectedSkills;
-        if(auxList.length < 3) {
-          auxList.push(skillValue);
+
+        let index = auxList.indexOf(skillValue);
+
+        console.log(index);
+
+        if (index > -1) {
+          auxList.splice(index, 1);
+        } else {
+          if (auxList.length < 3) {
+            auxList.push(skillValue);
+          }
         }
         console.log(auxList);
         return {
@@ -47,24 +56,24 @@ class App extends Component {
       })
     }
 
-  render() {
-    return (
-      <div>
-        <Header logo={logo} />
-        <main className="main__container">
-          <Card skills={this.state.selectedSkills}/>
-          <Form
-            skills={this.state.skills}
-            handleChange={this.handleChange}
+    render() {
+      return (
+        <div>
+          <Header logo={logo} />
+          <main className="main__container">
+            <Card skills={this.state.selectedSkills} />
+            <Form
+              skills={this.state.skills}
+              handleChange={this.handleChange}
+            />
+          </main>
+          <Footer
+            logoTeam={logoUndefined}
+            logoAdalab={logoAdalab}
           />
-        </main>
-        <Footer
-          logoTeam={logoUndefined}
-          logoAdalab={logoAdalab}
-        />
-      </div >
-    );
+        </div >
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
