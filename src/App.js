@@ -14,8 +14,8 @@ class App extends Component {
     super(props)
     this.state = {
       dataObject: {
-        'palette': '2',
-        'typography': '1',
+        'palette': '',
+        'typography': '',
         'name': '',
         'job': '',
         'phone': '',
@@ -26,14 +26,37 @@ class App extends Component {
         'skills': ['', '', '']
       }
     }
+    this.update = this.update.bind(this);
   } 
+
+  update(event) {
+    console.log(event.target.value);
+    const targetValue = event.target.value;
+    this.setState((prevState) => {
+      return {
+        dataObject: {
+          ...prevState.dataObject, 
+        name: targetValue,
+        job: targetValue,
+        phone: targetValue,
+        email: targetValue,
+        linkedin: targetValue,
+        github: targetValue
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <Header logo={logo} />
         <main className="main__container">
           <Card data={this.state.dataObject}/>
-          <Form data={this.state.dataObject}/>
+          <Form 
+          data={this.state.dataObject}
+          formUpdate={this.update}
+          />
         </main>
         <Footer
           logoTeam={logoUndefined}

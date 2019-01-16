@@ -29,10 +29,10 @@ class Form extends Component {
           <div className="content">
                 <form action="" id="form">
                   <div className="titles__complete-form"><label for="email">Full name</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} required /></div>
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">Job position</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
                     type="text" name="job" value={`${dataObject.job}`} required  /></div>
 
                   <div className="titles__complete-form"><label for="image">Profile image</label></div>
