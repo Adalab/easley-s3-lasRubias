@@ -14,8 +14,19 @@ class App extends Component {
     super(props);
     this.state = {
       allSkills: [],
-      skills: []
+      dataObject: {
+        'palette': '2',
+        'typography': '1',
+        'name': '',
+        'job': '',
+        'phone': '',
+        'email': '',
+        'linkedin': '',
+        'github': '',
+        'photo': '',
+        'skills': []
     }
+  }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
   }
@@ -33,11 +44,11 @@ class App extends Component {
 //metodo para seleccionar y des-seleccionar las skills
   handleChange(event) {
     const skillValue = event.target.value;
-    if (this.state.skills.length === 3) {
+    if (this.state.dataObject.skills.length === 3) {
       event.target.checked = false;
     }
     this.setState((prevState) => {
-      let auxList = prevState.skills;
+      let auxList = prevState.dataObject.skills;
       let index = auxList.indexOf(skillValue);
       console.log(index);
 
@@ -50,8 +61,10 @@ class App extends Component {
       }
       console.log(auxList);
       return {
-        skills: auxList
+        dataObject : {
+          skills: auxList
       }
+    }
     })
   }
 
@@ -60,8 +73,10 @@ class App extends Component {
       <div>
         <Header logo={logo} />
         <main className="main__container">
-          <Card skills={this.state.skills} />
+          <Card data={this.state.dataObject}
+          />
           <Form
+            data={this.state.dataObject}
             skills={this.state.allSkills}
             handleChange={this.handleChange}
           />
