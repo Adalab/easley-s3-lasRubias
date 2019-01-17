@@ -15,13 +15,8 @@ class App extends Component {
     this.state = {
       allSkills: [],
       dataObject: {
-<<<<<<< HEAD
-        'palette': '3',
-        'typography': '1',
-=======
         'palette': '',
         'typography': '',
->>>>>>> object_update
         'name': '',
         'job': '',
         'phone': '',
@@ -34,6 +29,7 @@ class App extends Component {
   }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
+    this.update = this.update.bind(this);
   }
 
   getSkills() {
@@ -70,10 +66,7 @@ class App extends Component {
           skills: auxList
       }
     }
-<<<<<<< HEAD
     })
-=======
-    this.update = this.update.bind(this);
   } 
 
   update(event) {
@@ -88,7 +81,6 @@ class App extends Component {
         }
       }
     });
->>>>>>> object_update
   }
 
   render() {
