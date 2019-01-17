@@ -15,8 +15,13 @@ class App extends Component {
     this.state = {
       allSkills: [],
       dataObject: {
+<<<<<<< HEAD
         'palette': '3',
         'typography': '1',
+=======
+        'palette': '',
+        'typography': '',
+>>>>>>> object_update
         'name': '',
         'job': '',
         'phone': '',
@@ -65,7 +70,25 @@ class App extends Component {
           skills: auxList
       }
     }
+<<<<<<< HEAD
     })
+=======
+    this.update = this.update.bind(this);
+  } 
+
+  update(event) {
+    console.log(event.target.value);
+    const { value, name } = event.target;
+   
+    this.setState((prevState) => {
+      return {
+        dataObject: {
+          ...prevState.dataObject, 
+        [name]: value,
+        }
+      }
+    });
+>>>>>>> object_update
   }
 
   render() {
@@ -73,12 +96,19 @@ class App extends Component {
       <div>
         <Header logo={logo} />
         <main className="main__container">
+<<<<<<< HEAD
           <Card data={this.state.dataObject}
           />
           <Form
             data={this.state.dataObject}
             skills={this.state.allSkills}
             handleChange={this.handleChange}
+=======
+          <Card data={this.state.dataObject}/>
+          <Form 
+          data={this.state.dataObject}
+          formUpdate={this.update}
+>>>>>>> object_update
           />
         </main>
         <Footer
