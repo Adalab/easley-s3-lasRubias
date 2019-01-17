@@ -29,6 +29,7 @@ class App extends Component {
   }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
+    this.update = this.update.bind(this);
   }
 
   getSkills() {
@@ -62,10 +63,11 @@ class App extends Component {
       console.log(auxList);
       return {
         dataObject : {
+          ...prevState.dataObject,
           skills: auxList
       }
     }
-    this.update = this.update.bind(this);
+    })
   } 
 
   update(event) {
@@ -87,19 +89,13 @@ class App extends Component {
       <div>
         <Header logo={logo} />
         <main className="main__container">
-<<<<<<< HEAD
           <Card data={this.state.dataObject}
           />
           <Form
             data={this.state.dataObject}
             skills={this.state.allSkills}
             handleChange={this.handleChange}
-=======
-          <Card data={this.state.dataObject}/>
-          <Form 
-          data={this.state.dataObject}
-          formUpdate={this.update}
->>>>>>> object_update
+            formUpdate={this.update}
           />
         </main>
         <Footer
