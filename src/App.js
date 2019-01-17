@@ -31,17 +31,13 @@ class App extends Component {
 
   update(event) {
     console.log(event.target.value);
-    const targetValue = event.target.value;
+    const { value, name } = event.target;
+   
     this.setState((prevState) => {
       return {
         dataObject: {
           ...prevState.dataObject, 
-        name: targetValue,
-        job: targetValue,
-        phone: targetValue,
-        email: targetValue,
-        linkedin: targetValue,
-        github: targetValue
+        [name]: value,
         }
       }
     });

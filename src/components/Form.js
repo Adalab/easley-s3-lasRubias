@@ -43,19 +43,19 @@ class Form extends Component {
                   </div>
 
                   <div className="titles__complete-form"><label for="email">Email</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
                     type="email" name="email" value={`${dataObject.email}`} required /></div>
 
                   <div className="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
-                    type="tel" name="telf_movil" pattern="^6[0-9]{8}$"value={`${dataObject.phone}`} required /></div>
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
+                    type="tel" name="phone" pattern="^6[0-9]{8}$"value={`${dataObject.phone}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">LinkedIn</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: sally-hill"
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
                     id="linkedin-input" type="email" name="linkedin" value={`${dataObject.linkedin}`} required /></div>
 
                   <div className="titles__complete-form"><label for="email">GitHub</label></div>
-                  <div><input className="section2__completeform--input" placeholder="Ex: sally-hill"
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
                     id="github-input" type="email" name="github" value={`${dataObject.github}`}required /></div>
 
                   <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
