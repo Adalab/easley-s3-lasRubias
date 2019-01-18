@@ -14,7 +14,10 @@ class StyleContainer extends Component {
         // console.log(colors,  fonts);
         return (
             <div className="content">
-                <Palettes colors={colors} />
+                <Palettes 
+                  colors={colors} 
+                  handleColorChange={this.props.handleColorChange} 
+                />
                 <Fonts fonts={fonts} />
             </div>
         );

@@ -30,6 +30,20 @@ class App extends Component {
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
+    this.handleColorChange = this.handleColorChange.bind(this);
+  }
+
+  handleColorChange(e) {
+    console.log(e.currentTarget);
+    const checkedColor = e.currentTarget.value;
+    this.setState((prevState) =>{
+      return {
+        dataObject : {
+          ...prevState.dataObject,
+          palette: checkedColor
+      }
+      } 
+    })
   }
 
   getSkills() {
@@ -96,6 +110,7 @@ class App extends Component {
             skills={this.state.allSkills}
             handleChange={this.handleChange}
             formUpdate={this.update}
+            handleColorChange={this.handleColorChange}
           />
         </main>
         <Footer
