@@ -9,6 +9,7 @@ class Form extends Component {
     render () {
       console.log(this.props);
       const dataObject = this.props.data;
+      const {imageLoad, handleImageChange, refForInput, imageBg} = this.props;
         return (
           <section className="card__section2">
           <ul className="section2__list">
@@ -29,37 +30,37 @@ class Form extends Component {
           >
           <div className="content">
                 <form action="" id="form">
-                  <div className="titles__complete-form"><label for="email">Full name</label></div>
-                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} required /></div>
+                  <div className="titles__complete-form"><label htmlFor="email">Full name</label></div>
+                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} /></div>
 
-                  <div className="titles__complete-form"><label for="email">Job position</label></div>
+                  <div className="titles__complete-form"><label htmlFor="email">Job position</label></div>
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
-                    type="text" name="job" value={`${dataObject.job}`} required  /></div>
+                    type="text" name="job" value={`${dataObject.job}`}   /></div>
 
-                  <div className="titles__complete-form"><label for="image">Profile image</label></div>
+                  <div className="titles__complete-form"><label htmlFor="image">Profile image</label></div>
                   <div className="formcomplete__container--addimage">
-                    <button className="button__add--image">Add image</button>
-                    <input type="file" name="" id="img-selector" className="action__hiddenField" />
-                    <div className="formcomplete__imagepreview profile__image"></div>
+                    <button onClick={imageLoad} className="button__add--image">Add image</button>
+                    <input ref={refForInput} onChange={handleImageChange} type="file" name="" id="img-selector" className="action__hiddenField" />
+                    <div style={imageBg} className="formcomplete__imagepreview profile__image"></div>
                   </div>
 
-                  <div className="titles__complete-form"><label for="email">Email</label></div>
+                  <div className="titles__complete-form"><label htmlFor="email">Email</label></div>
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
-                    type="email" name="email" value={`${dataObject.email}`} required /></div>
+                    type="email" name="email" value={`${dataObject.email}`}  /></div>
 
-                  <div className="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
+                  <div className="titles__complete-form"><label htmlFor="telf_movil">Telephone number</label></div>
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
-                    type="tel" name="phone" pattern="^6[0-9]{8}$"value={`${dataObject.phone}`} required /></div>
+                    type="tel" name="phone" pattern="^6[0-9]{8}$" value={`${dataObject.phone}`} /></div>
 
-                  <div className="titles__complete-form"><label for="email">LinkedIn</label></div>
+                  <div className="titles__complete-form"><label htmlFor="email">LinkedIn</label></div>
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
-                    id="linkedin-input" type="email" name="linkedin" value={`${dataObject.linkedin}`} required /></div>
+                    id="linkedin-input" type="email" name="linkedin" value={`${dataObject.linkedin}`} /></div>
 
-                  <div className="titles__complete-form"><label for="email">GitHub</label></div>
+                  <div className="titles__complete-form"><label htmlFor="email">GitHub</label></div>
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
-                    id="github-input" type="email" name="github" value={`${dataObject.github}`}required /></div>
+                    id="github-input" type="email" name="github" value={`${dataObject.github}`} /></div>
 
-                  <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
+                  <div className="titles__complete-form"><label htmlFor="skills">Skills (max 3)</label></div>
                   <div id="container-checkboxes" className="titles__complete-form" onChange={this.props.handleChange}>
                   <ul>
                     {this.props.skills.map(skill => (
