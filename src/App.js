@@ -30,6 +30,7 @@ class App extends Component {
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   getSkills() {
@@ -84,12 +85,32 @@ class App extends Component {
     });
   }
 
+  resetState(event){
+    this.setState((prevState) => {
+      return {
+        dataObject: {
+          'palette': '',
+          'typography': '',
+          'name': '',
+          'job': '',
+          'phone': '',
+          'email': '',
+          'linkedin': '',
+          'github': '',
+          'photo': '',
+          'skills': []
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <Header logo={logo} />
         <main className="main__container">
           <Card data={this.state.dataObject}
+              reset={this.resetState}
           />
           <Form
             data={this.state.dataObject}
