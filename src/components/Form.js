@@ -20,6 +20,7 @@ class Form extends Component {
             <StyleContainer 
             dataObject={dataObject} 
             handleColorChange={this.props.handleColorChange}
+            handleFontChange={this.props.handleFontChange}
             />
           </Collapsable>
           <Collapsable

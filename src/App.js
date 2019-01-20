@@ -31,10 +31,10 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
+    this.handleFontChange = this.handleFontChange.bind(this);
   }
 
   handleColorChange(e) {
-    console.log(e.currentTarget);
     const checkedColor = e.currentTarget.value;
     this.setState((prevState) =>{
       return {
@@ -45,6 +45,19 @@ class App extends Component {
       } 
     })
   }
+
+  handleFontChange(e) {
+    const checkedFont = e.currentTarget.value;
+    this.setState((prevState) =>{
+      return {
+        dataObject : {
+          ...prevState.dataObject,
+          typography: checkedFont
+      }
+      } 
+    })
+  }
+
 
   getSkills() {
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
@@ -111,6 +124,7 @@ class App extends Component {
             handleChange={this.handleChange}
             formUpdate={this.update}
             handleColorChange={this.handleColorChange}
+            handleFontChange={this.handleFontChange}
           />
         </main>
         <Footer

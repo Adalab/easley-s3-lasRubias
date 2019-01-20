@@ -10,7 +10,7 @@ class Card extends Component {
         } else if (palette === "2") {
             colorCard = "red";
         } else if (palette === "3") {
-            colorCard = "grey";
+            colorCard = "gray";
         }
         return colorCard;
     }
@@ -29,7 +29,6 @@ class Card extends Component {
     }
 
     render() {
-        console.log(this.props);
         const { data } = this.props;
         return (
             <section className="profile">
@@ -58,6 +57,7 @@ class Card extends Component {
                                     className="icon-link"
                                     href={`tel:${data.phone}`}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <i className="fas fa-mobile-alt ico" />
                                 </a>
@@ -68,6 +68,7 @@ class Card extends Component {
                                     className="icon-link"
                                     href={`mailto:${data.email}`}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <i className="far fa-envelope ico" />
                                 </a>
@@ -78,6 +79,7 @@ class Card extends Component {
                                     className="icon-link"
                                     href={`https://www.linkedin.com/in/${data.linkedin}`}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <i className="fab fa-linkedin-in ico" />
                                 </a>
@@ -88,6 +90,7 @@ class Card extends Component {
                                     className="icon-link"
                                     href={`https://github.com/${data.github}`}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <i className="fab fa-github-alt ico" />
                                 </a>

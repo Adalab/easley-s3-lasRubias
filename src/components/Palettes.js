@@ -8,7 +8,6 @@ class Palettes extends Component {
                 <form id="color-form">
                     <label for="palette__green" className="palette__green">
                         <input
-                            // checked={this.props.colors === "1"}
                             onChange={this.props.handleColorChange}
                             className="formdesign__circle"
                             id="palette__green"
@@ -24,7 +23,6 @@ class Palettes extends Component {
                     </label>
                     <label for="palette__red" className="palette__red">
                         <input
-                            // checked={this.props.colors === "2"}
                             onChange={this.props.handleColorChange}
                             className="formdesign__circle"
                             id="palette__red"
@@ -40,7 +38,6 @@ class Palettes extends Component {
                     </label>
                     <label for="palette__gray" className="palette__gray">
                         <input
-                            // checked={this.props.colors === "3"}
                             onChange={this.props.handleColorChange}
                             className="formdesign__circle"
                             id="palette__gray"
