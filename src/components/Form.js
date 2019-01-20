@@ -5,17 +5,59 @@ import StyleContainer from "./StyleContainer";
 import ListSkills from "./ListSkills";
 
 class Form extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCollapsible: 'first_block',
+    }
+    this.handleCollapsible = this.handleCollapsible.bind(this);
+  }
+
+  handleCollapsible (event) {
+      const selectedBlock = event.currentTarget;
+      const classes = selectedBlock.classList;
+      let openEl;
+
+      if(classes.contains('first_block')){
+        openEl = 'first_block';
+      } else if (classes.contains('second_block')){
+        openEl = 'second_block';
+      } else if (classes.contains('third_block')){
+        openEl = 'third_block';
+      }
+
+      this.setState({
+        activeCollapsible: openEl
+      })
+  }
+
   render() {
     console.log(this.props);
     const dataObject = this.props.data;
+    
+    let open_first = false;
+    let open_second = false;
+    let open_third = false;
+
+    if (this.state.activeCollapsible === 'first_block') {
+      open_first = true;
+    } else if (this.state.activeCollapsible === 'second_block'){
+      open_second = true;
+    } else if (this.state.activeCollapsible === 'third_block'){
+      open_third = true;
+    }
+
     return (
       <section className="card__section2">
         <ul className="section2__list">
           <Collapsable
-            block="first_block open"
+            block="first_block"
             numberChild="first_child"
             icoSection="far fa-object-ungroup icon__card-page"
             titleSection="design"
+            isOpen={open_first}
+            isSelected={this.handleCollapsible}
           >
             <StyleContainer 
             dataObject={dataObject} 
@@ -28,6 +70,8 @@ class Form extends Component {
             numberChild="second_child"
             icoSection="fas fa-keyboard icon__card-page"
             titleSection="complete"
+            isOpen={open_second}
+            isSelected={this.handleCollapsible}
           >
             <div className="content">
               <form action="" id="form">
@@ -165,6 +209,8 @@ class Form extends Component {
             numberChild="third_child"
             icoSection="fas fa-share-alt icon__card-page"
             titleSection="share"
+            isOpen={open_third}
+            isSelected={this.handleCollapsible}
           >
             <div className="content button_container">
               <button className="button__create-card">
