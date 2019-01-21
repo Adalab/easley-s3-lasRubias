@@ -18,7 +18,7 @@ class Collapsable extends React.Component {
     }
 }
 
-Collapsable.PropTypes ={
+Collapsable.propTypes ={
     block: PropTypes.string.isRequired,
     numberChild: PropTypes.string.isRequired,
     icoSection: PropTypes.string.isRequired,
