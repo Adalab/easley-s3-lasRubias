@@ -11,6 +11,19 @@ import Card from './components/Card';
 
 const fr = new FileReader();
 
+const defaultDataObject = {
+  'palette': '',
+  'typography': '',
+  'name': '',
+  'job': '',
+  'phone': '',
+  'email': '',
+  'linkedin': '',
+  'github': '',
+  'photo': '',
+  'skills': []
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,16 +32,7 @@ class App extends Component {
     this.state = {
       allSkills: [],
       dataObject: {
-        'palette': '',
-        'typography': '',
-        'name': '',
-        'job': '',
-        'phone': '',
-        'email': '',
-        'linkedin': '',
-        'github': '',
-        'photo': '',
-        'skills': []
+        ...defaultDataObject
     },
     fileUrl: '/static/media/default_picture.2a640627.jpg'
   }
@@ -147,16 +151,7 @@ class App extends Component {
     this.setState((prevState) => {
       return {
         dataObject: {
-          'palette': '',
-          'typography': '',
-          'name': '',
-          'job': '',
-          'phone': '',
-          'email': '',
-          'linkedin': '',
-          'github': '',
-          'photo': '',
-          'skills': []
+          ...defaultDataObject
         }
       }
     });
