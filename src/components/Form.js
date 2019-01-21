@@ -60,11 +60,11 @@ class Form extends Component {
                   <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
                     id="github-input" type="email" name="github" value={`${dataObject.github}`} /></div>
 
-                  <div className="titles__complete-form"><label htmlFor="skills">Skills (max 3)</label></div>
-                  <div id="container-checkboxes" className="titles__complete-form" onChange={this.props.handleChange}>
+                  <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
+                  <div id="container-checkboxes" className="titles__complete-form">
                   <ul>
                     {this.props.skills.map(skill => (
-                      <ListSkills skill={skill} />
+                      <ListSkills skill={skill} handleChange={this.props.handleChange} />
                       )
                     )}
                   </ul></div>

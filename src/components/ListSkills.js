@@ -4,7 +4,7 @@ class ListSkills extends Component {
     render() {
         return (
             <li>
-                <input type="checkbox" value={this.props.skill} />
+                <input type="checkbox" value={this.props.skill} onChange={this.props.handleChange}/>
                 {this.props.skill}
             </li>
         )
