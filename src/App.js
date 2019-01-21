@@ -20,7 +20,7 @@ const defaultDataObject = {
   'email': '',
   'linkedin': '',
   'github': '',
-  'photo': '',
+  'photo': '/static/media/default_picture.2a640627.jpg',
   'skills': []
 }
 
@@ -34,7 +34,7 @@ class App extends Component {
       dataObject: {
         ...defaultDataObject
     },
-    fileUrl: '/static/media/default_picture.2a640627.jpg'
+   // fileUrl: '/static/media/default_picture.2a640627.jpg'
   }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
@@ -58,9 +58,14 @@ class App extends Component {
 
   writeImage() {
     const url = fr.result;
-    this.setState({
-      fileUrl: url
-    });
+    this.setState((prevState) =>{
+      return {
+        dataObject : {
+          ...prevState.dataObject,
+          photo: url
+      }
+      } 
+    })
   }
 
   handleImageChange(event){
@@ -165,7 +170,7 @@ class App extends Component {
         <main className="main__container">
           <Card 
           data={this.state.dataObject}
-          imageBg={{backgroundImage: `url(${this.state.fileUrl})` }}
+          imageBg={{backgroundImage: `url(${this.state.dataObject.photo})` }}
           reset={this.resetState}
           />
           <Form
@@ -178,7 +183,7 @@ class App extends Component {
             imageLoad={this.imageClick}
             handleImageChange={this.handleImageChange}
             refForInput={this.fileInput} 
-            imageBg={{backgroundImage: `url(${this.state.fileUrl})` }}
+            imageBg={{backgroundImage: `url(${this.state.dataObject.photo})` }}
 
             //Here start props for radiobuttons
             handleColorChange={this.handleColorChange}
