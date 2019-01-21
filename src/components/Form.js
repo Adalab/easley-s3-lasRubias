@@ -6,7 +6,13 @@ import ListSkills from './ListSkills';
 
 
 class Form extends Component {
-    render () {
+  handleClick(e) {
+    const option= e.target;
+    console.log(option);
+  }
+
+
+  render () {
       console.log(this.props);
       const dataObject = this.props.data;
         return (
@@ -17,6 +23,7 @@ class Form extends Component {
             numberChild="first_child"
             icoSection="far fa-object-ungroup icon__card-page"
             titleSection="design"
+            functionHandler = {this.handleClick}
           >
          <StyleContainer dataObject = {dataObject}/>
 
