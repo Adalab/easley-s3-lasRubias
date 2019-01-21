@@ -131,6 +131,8 @@ class App extends Component {
       }
     }
     })
+    console.log ('skills',defaultDataObject.skills);
+
   } 
 
   update(event) {
@@ -147,12 +149,11 @@ class App extends Component {
     });
   }
 
-  resetState(event){
-    this.setState((prevState) => {
-      return {
+  resetState(){
+    defaultDataObject.skills = [];
+    this.setState({
         dataObject: {
           ...defaultDataObject
-        }
       }
     });
   }
