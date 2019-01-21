@@ -40,6 +40,9 @@ class App extends Component {
     this.imageClick = this.imageClick.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
     this.writeImage = this.writeImage.bind(this);
+    //Here start binds for radiobuttons
+    this.handleColorChange = this.handleColorChange.bind(this);
+    this.handleFontChange = this.handleFontChange.bind(this);
   }
 
   imageClick(event){
@@ -59,8 +62,32 @@ class App extends Component {
 
     fr.addEventListener('load', this.writeImage);
     fr.readAsDataURL(myImage);
-
   }
+
+  handleColorChange(e) {
+    const checkedColor = e.currentTarget.value;
+    this.setState((prevState) =>{
+      return {
+        dataObject : {
+          ...prevState.dataObject,
+          palette: checkedColor
+      }
+      } 
+    })
+  }
+
+  handleFontChange(e) {
+    const checkedFont = e.currentTarget.value;
+    this.setState((prevState) =>{
+      return {
+        dataObject : {
+          ...prevState.dataObject,
+          typography: checkedFont
+      }
+      } 
+    })
+  }
+
 
   getSkills() {
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
@@ -134,6 +161,10 @@ class App extends Component {
             handleImageChange={this.handleImageChange}
             refForInput={this.fileInput} 
             imageBg={{backgroundImage: `url(${this.state.fileUrl})` }}
+
+            //Here start props for radiobuttons
+            handleColorChange={this.handleColorChange}
+            handleFontChange={this.handleFontChange}
           />
         </main>
         <Footer

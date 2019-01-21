@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import PropTypes from "prop-types";
-import Collapsable from './Collapsable';
-import StyleContainer from './StyleContainer';
-import ListSkills from './ListSkills';
-
+import Collapsable from "./Collapsable";
+import StyleContainer from "./StyleContainer";
+import ListSkills from "./ListSkills";
 
 class Form extends Component {
     render () {
@@ -19,8 +18,11 @@ class Form extends Component {
             icoSection="far fa-object-ungroup icon__card-page"
             titleSection="design"
           >
-         <StyleContainer dataObject = {dataObject}/>
-
+            <StyleContainer 
+            dataObject={dataObject} 
+            handleColorChange={this.props.handleColorChange}
+            handleFontChange={this.props.handleFontChange}
+            />
           </Collapsable>
           <Collapsable
             block="second_block"
@@ -81,14 +83,18 @@ class Form extends Component {
           >
             <div className="content button_container">
               <button className="button__create-card">
-                <i className="far fa-id-card"></i>
+                <i className="far fa-id-card" />
                 <a> Create visit card</a>
               </button>
               <div className="create__mesage">
-                <div className="title__card--created">The card has been created</div>
-                <a className="title__card--link">Share the card with your friends!</a>
+                <div className="title__card--created">
+                  The card has been created
+                </div>
+                <a className="title__card--link">
+                  Share the card with your friends!
+                </a>
                 <button className="button__twitter">
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter" />
                   <a className="twitter"> Share on twitter</a>
                 </button>
               </div>
@@ -100,9 +106,4 @@ class Form extends Component {
   }
 }
 
-
-
-
-
 export default Form;
-
