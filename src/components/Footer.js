@@ -11,7 +11,7 @@ class Footer extends Component {
             <div className="footer__logo">
                 <img className="logo-undefined" src={this.props.logoTeam} alt="Undefined logo" />
             </div>
-            <a class="footer__logo" href="https://adalab.es/">
+            <a className="footer__logo" href="https://adalab.es/">
                 <img className="logo-adalab" src={this.props.logoAdalab} alt="Adalab logo" />
             </a>
           </div>
@@ -20,7 +20,7 @@ class Footer extends Component {
     }
 }
 
-Footer.PropTypes ={
+Footer.propTypes ={
     logoTeam: PropTypes.string.isRequired,
     logoAdalab: PropTypes.string.isRequired
 }
