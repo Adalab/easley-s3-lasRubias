@@ -9,23 +9,27 @@ import Form from './components/Form';
 import Header from './components/Header';
 import Card from './components/Card';
 
+const defaultDataObject =  {
+  'palette': '',
+  'typography': '',
+  'name': '',
+  'job': '',
+  'phone': '',
+  'email': '',
+  'linkedin': '',
+  'github': '',
+  'photo': '',
+  'skills': []
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allSkills: [],
       dataObject: {
-        'palette': '',
-        'typography': '',
-        'name': '',
-        'job': '',
-        'phone': '',
-        'email': '',
-        'linkedin': '',
-        'github': '',
-        'photo': '',
-        'skills': []
-    }
+        ...defaultDataObject,
+      }
   }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
@@ -89,16 +93,7 @@ class App extends Component {
     this.setState((prevState) => {
       return {
         dataObject: {
-          'palette': '',
-          'typography': '',
-          'name': '',
-          'job': '',
-          'phone': '',
-          'email': '',
-          'linkedin': '',
-          'github': '',
-          'photo': '',
-          'skills': []
+          ...defaultDataObject
         }
       }
     });
