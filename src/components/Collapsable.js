@@ -16,7 +16,6 @@ class Collapsable extends React.Component {
                 <div><i className="fas fa-chevron-down icon__arrow--card-page"></i></div>
               </div>
               {this.props.children}
-              
             </li>
         );
     }

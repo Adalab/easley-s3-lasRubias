@@ -21,6 +21,9 @@ class Form extends Component {
 
       if(classes.contains('first_block')){
         openEl = 'first_block';
+        if(classes.contains('open')){
+          openEl = '';
+        }
       } else if (classes.contains('second_block')){
         openEl = 'second_block';
       } else if (classes.contains('third_block')){
