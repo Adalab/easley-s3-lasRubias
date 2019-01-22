@@ -87,11 +87,12 @@ class Form extends Component {
             numberChild="third_child"
             icoSection="fas fa-share-alt icon__card-page"
             titleSection="share"
+            openShareBtn={this.props.openShareBtn}
           >
             <div className="content button_container">
               <button className="button__create-card" onClick={this.props.sendToBackend}>
                 <i className="far fa-id-card" />
-                <a href="google.com"> Create visit card</a>
+                 <span> Create visit card</span> 
               </button>
               <div className="create__mesage">
                 <div className="title__card--created">

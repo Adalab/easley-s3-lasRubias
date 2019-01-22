@@ -34,7 +34,7 @@ class App extends Component {
       dataObject: {
         ...defaultDataObject
       },
-      // fileUrl: '/static/media/default_picture.2a640627.jpg'
+      shareBtnClass: ""
     }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   sendToBackend() {
-    const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    /* const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
     const dataFromObject = this.state.dataObject;
     fetch(backendUrl, {
         method: 'POST',
@@ -62,6 +62,9 @@ class App extends Component {
         headers: {
           'Content-type': 'aplication/json'
         }
+      }) */
+      this.setState({
+        shareBtnClass: "add_height"
       })
   }
 
@@ -220,6 +223,7 @@ class App extends Component {
             handleFontChange={this.handleFontChange}
             //Logic to create card and backend
             sendToBackend={this.sendToBackend}
+            openShareBtn={this.state.shareBtnClass}
           />
         </main>
         <Footer
