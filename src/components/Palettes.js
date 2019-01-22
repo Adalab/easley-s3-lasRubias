@@ -9,7 +9,7 @@ class Palettes extends Component {
                     <label htmlFor="palette__green" className="palette__green">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__green"
                             type="radio"
                             value="1"
@@ -24,7 +24,7 @@ class Palettes extends Component {
                     <label htmlFor="palette__red" className="palette__red">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__red"
                             type="radio"
                             value="2"
@@ -39,7 +39,7 @@ class Palettes extends Component {
                     <label htmlFor="palette__gray" className="palette__gray">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__gray"
                             type="radio"
                             value="3"

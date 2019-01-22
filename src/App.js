@@ -33,9 +33,9 @@ class App extends Component {
       allSkills: [],
       dataObject: {
         ...defaultDataObject
-    },
-   // fileUrl: '/static/media/default_picture.2a640627.jpg'
-  }
+      },
+      // fileUrl: '/static/media/default_picture.2a640627.jpg'
+    }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
@@ -49,26 +49,28 @@ class App extends Component {
     this.handleFontChange = this.handleFontChange.bind(this);
     //Here starts reset button
     this.resetState = this.resetState.bind(this);
+
+    this.unCheck = this.unCheck.bind(this)
   }
 
-  imageClick(event){
+  imageClick(event) {
     event.preventDefault();
     this.fileInput.current.click();
   }
 
   writeImage() {
     const url = fr.result;
-    this.setState((prevState) =>{
+    this.setState((prevState) => {
       return {
-        dataObject : {
+        dataObject: {
           ...prevState.dataObject,
           photo: url
+        }
       }
-      } 
     })
   }
 
-  handleImageChange(event){
+  handleImageChange(event) {
     const myImage = event.currentTarget.files[0];
 
     fr.addEventListener('load', this.writeImage);
@@ -77,25 +79,25 @@ class App extends Component {
 
   handleColorChange(e) {
     const checkedColor = e.currentTarget.value;
-    this.setState((prevState) =>{
+    this.setState((prevState) => {
       return {
-        dataObject : {
+        dataObject: {
           ...prevState.dataObject,
           palette: checkedColor
+        }
       }
-      } 
     })
   }
 
   handleFontChange(e) {
     const checkedFont = e.currentTarget.value;
-    this.setState((prevState) =>{
+    this.setState((prevState) => {
       return {
-        dataObject : {
+        dataObject: {
           ...prevState.dataObject,
           typography: checkedFont
+        }
       }
-      } 
     })
   }
 
@@ -109,8 +111,8 @@ class App extends Component {
         }
       ))
   }
-  
-//metodo para seleccionar y des-seleccionar las skills
+
+  //metodo para seleccionar y des-seleccionar las skills
   handleChange(event) {
     const skillValue = event.target.value;
     if (this.state.dataObject.skills.length === 3) {
@@ -130,35 +132,46 @@ class App extends Component {
       }
       console.log(auxList);
       return {
-        dataObject : {
+        dataObject: {
           ...prevState.dataObject,
           skills: auxList
+        }
       }
-    }
     })
-    console.log ('skills',defaultDataObject.skills);
+    console.log('skills', defaultDataObject.skills);
 
-  } 
+  }
 
   update(event) {
     console.log(event.target.value);
     const { value, name } = event.target;
-   
+
     this.setState((prevState) => {
       return {
         dataObject: {
-          ...prevState.dataObject, 
-        [name]: value,
+          ...prevState.dataObject,
+          [name]: value,
         }
       }
     });
   }
 
-  resetState(){
+  unCheck = () => {
+    let checkEl = document.getElementsByClassName('checkbox');
+    const myArray = Array.from(checkEl);
+    myArray.map(el =>
+      //console.log('ELEMENT', el);
+      el.checked = false
+    )
+    //console.log('checkel', checkEl);
+  }
+
+  resetState() {
+    this.unCheck();
     defaultDataObject.skills = [];
     this.setState({
-        dataObject: {
-          ...defaultDataObject
+      dataObject: {
+        ...defaultDataObject
       }
     });
   }
@@ -168,10 +181,10 @@ class App extends Component {
       <div>
         <Header logo={logo} />
         <main className="main__container">
-          <Card 
-          data={this.state.dataObject}
-          imageBg={{backgroundImage: `url(${this.state.dataObject.photo})` }}
-          reset={this.resetState}
+          <Card
+            data={this.state.dataObject}
+            imageBg={{ backgroundImage: `url(${this.state.dataObject.photo})` }}
+            reset={this.resetState}
           />
           <Form
             data={this.state.dataObject}
@@ -182,8 +195,8 @@ class App extends Component {
             //Here start props for image logic
             imageLoad={this.imageClick}
             handleImageChange={this.handleImageChange}
-            refForInput={this.fileInput} 
-            imageBg={{backgroundImage: `url(${this.state.dataObject.photo})` }}
+            refForInput={this.fileInput}
+            imageBg={{ backgroundImage: `url(${this.state.dataObject.photo})` }}
 
             //Here start props for radiobuttons
             handleColorChange={this.handleColorChange}
