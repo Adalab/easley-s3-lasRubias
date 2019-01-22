@@ -6,10 +6,10 @@ class Palettes extends Component {
             <div className="section2__colors--wrapper">
                 <div className="section2__design--titles">Colors</div>
                 <form id="color-form">
-                    <label for="palette__green" className="palette__green">
+                    <label htmlFor="palette__green" className="palette__green">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__green"
                             type="radio"
                             value="1"
@@ -21,10 +21,10 @@ class Palettes extends Component {
                             <div className="palette__dimensions palette__green--light" />
                         </div>
                     </label>
-                    <label for="palette__red" className="palette__red">
+                    <label htmlFor="palette__red" className="palette__red">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__red"
                             type="radio"
                             value="2"
@@ -36,10 +36,10 @@ class Palettes extends Component {
                             <div className="palette__dimensions palette__red--light" />
                         </div>
                     </label>
-                    <label for="palette__gray" className="palette__gray">
+                    <label htmlFor="palette__gray" className="palette__gray">
                         <input
                             onChange={this.props.handleColorChange}
-                            className="formdesign__circle"
+                            className="formdesign__circle checkbox"
                             id="palette__gray"
                             type="radio"
                             value="3"
