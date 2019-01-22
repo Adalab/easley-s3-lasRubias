@@ -98,12 +98,12 @@ class Form extends Component {
                 <div className="title__card--created">
                   The card has been created
                 </div>
-                <a className="title__card--link" href="google.com">
+                <a className="title__card--link" href="google">
                   Share the card with your friends!
                 </a>
                 <button className="button__twitter">
                   <i className="fab fa-twitter" />
-                  <a className="twitter" href="google"> Share on twitter</a>
+                  <a className="twitter" href={this.props.linkTwitter}> Share on twitter</a>
                 </button>
               </div>
             </div>
