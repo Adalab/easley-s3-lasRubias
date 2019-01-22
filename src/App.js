@@ -43,7 +43,22 @@ class App extends Component {
     //Here start binds for radiobuttons
     this.handleColorChange = this.handleColorChange.bind(this);
     this.handleFontChange = this.handleFontChange.bind(this);
+    //Here starts binds for backend
+    this.sendToBackend = this.sendToBackend.bind(this);
   }
+
+  sendToBackend() {
+    const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    const dataFromObject = this.state.dataObject;
+    fetch(backendUrl, {
+        method: 'POST',
+        body: JSON.stringify(dataFromObject),
+        headers: {
+          'Content-type': 'aplication/json'
+        }
+      })
+  }
+
 
   imageClick(event){
     event.preventDefault();
@@ -165,6 +180,8 @@ class App extends Component {
             //Here start props for radiobuttons
             handleColorChange={this.handleColorChange}
             handleFontChange={this.handleFontChange}
+            //Logic to create card and backend
+            sendToBackend={this.sendToBackend}
           />
         </main>
         <Footer

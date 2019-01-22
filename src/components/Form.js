@@ -89,20 +89,20 @@ class Form extends Component {
             titleSection="share"
           >
             <div className="content button_container">
-              <button className="button__create-card">
+              <button className="button__create-card" onClick={this.props.sendToBackend}>
                 <i className="far fa-id-card" />
-                <a> Create visit card</a>
+                <a href="google.com"> Create visit card</a>
               </button>
               <div className="create__mesage">
                 <div className="title__card--created">
                   The card has been created
                 </div>
-                <a className="title__card--link">
+                <a className="title__card--link" href="google.com">
                   Share the card with your friends!
                 </a>
                 <button className="button__twitter">
                   <i className="fab fa-twitter" />
-                  <a className="twitter"> Share on twitter</a>
+                  <a className="twitter" href="google"> Share on twitter</a>
                 </button>
               </div>
             </div>
