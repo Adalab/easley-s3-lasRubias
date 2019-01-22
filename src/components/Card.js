@@ -34,7 +34,7 @@ class Card extends Component {
     return (
       <section className="profile">
         <div className="profile__container">
-          <button className="profile__action">
+          <button className="profile__action" onClick={this.props.reset}>
             <i className="far fa-trash-alt" />
             <span className="profile__action-text">Reset</span>
           </button>

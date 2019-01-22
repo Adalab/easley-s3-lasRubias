@@ -10,7 +10,7 @@ class Fonts extends Component {
                         <label htmlFor="font__option--1" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
-                                className="formdesign__circle"
+                                className="formdesign__circle checkbox"
                                 id="font__option--1"
                                 type="radio"
                                 value="1"
@@ -21,7 +21,7 @@ class Fonts extends Component {
                         <label htmlFor="font__option--2" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
-                                className="formdesign__circle"
+                                className="formdesign__circle checkbox"
                                 id="font__option--2"
                                 type="radio"
                                 value="2"
@@ -32,7 +32,7 @@ class Fonts extends Component {
                         <label htmlFor="font__option--3" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
-                                className="formdesign__circle"
+                                className="formdesign__circle checkbox"
                                 id="font__option--3"
                                 type="radio"
                                 value="3"
