@@ -87,22 +87,23 @@ class Form extends Component {
             numberChild="third_child"
             icoSection="fas fa-share-alt icon__card-page"
             titleSection="share"
+            openShareBtn={this.props.openShareBtn}
           >
             <div className="content button_container">
-              <button className="button__create-card">
+              <button className="button__create-card" onClick={this.props.sendToBackend}>
                 <i className="far fa-id-card" />
-                <a> Create visit card</a>
+                 <span> Create visit card</span> 
               </button>
               <div className="create__mesage">
                 <div className="title__card--created">
                   The card has been created
                 </div>
-                <a className="title__card--link">
-                  Share the card with your friends!
+                <a className="title__card--link" href={this.props.linkShare} target="_blank">
+                  {this.props.linkShare}
                 </a>
                 <button className="button__twitter">
                   <i className="fab fa-twitter" />
-                  <a className="twitter"> Share on twitter</a>
+                  <a className="twitter" href={this.props.linkTwitter} target="_blank"> Share on twitter</a>
                 </button>
               </div>
             </div>

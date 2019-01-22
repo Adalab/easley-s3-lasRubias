@@ -12,8 +12,8 @@ import Card from './components/Card';
 const fr = new FileReader();
 
 const defaultDataObject = {
-  'palette': '',
-  'typography': '',
+  'palette': {},
+  'typography': {},
   'name': '',
   'job': '',
   'phone': '',
@@ -23,6 +23,8 @@ const defaultDataObject = {
   'photo': '/static/media/default_picture.2a640627.jpg',
   'skills': []
 }
+const twitterModel = "https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨";
+
 
 class App extends Component {
   constructor(props) {
@@ -34,12 +36,16 @@ class App extends Component {
       dataObject: {
         ...defaultDataObject
       },
-      // fileUrl: '/static/media/default_picture.2a640627.jpg'
+      shareBtnClass: "",
+      linkTwitter: "",
+      linkShare: ""
     }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
+    this.resetState = this.resetState.bind(this);
 
+    this.unCheck = this.unCheck.bind(this)
     //Here start binds for image logic
     this.imageClick = this.imageClick.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
@@ -47,11 +53,55 @@ class App extends Component {
     //Here start binds for radiobuttons
     this.handleColorChange = this.handleColorChange.bind(this);
     this.handleFontChange = this.handleFontChange.bind(this);
-    //Here starts reset button
-    this.resetState = this.resetState.bind(this);
-
-    this.unCheck = this.unCheck.bind(this)
+    //Here starts binds for backend
+    this.sendToBackend = this.sendToBackend.bind(this);
   }
+
+  sendToBackend() {
+     const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    const dataFromObject = this.state.dataObject;
+    fetch(backendUrl, {
+        method: 'POST',
+        body: JSON.stringify(dataFromObject),
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw (res);
+        }
+        return res.json();
+      })
+      .then( response => {
+        const createdCardURL = response.cardURL;
+        console.log(createdCardURL);
+        let twitterHref = "";
+        
+        if(createdCardURL !== null) {
+          twitterHref = twitterModel + createdCardURL;
+        }
+        this.setState({
+          shareBtnClass: "add_height",
+          linkTwitter: twitterHref,
+          linkShare: createdCardURL
+        })
+      })
+
+      .catch(err => console.log('error', err));
+     
+  }
+
+/*   .then(res => res.json())
+    .then(response => {
+
+      cardLink.innerHTML = response.cardURL;
+
+      tweetbutton.href = 'https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨' + response.cardURL + "✨" + "%20feeling%20more%20curious?%20👀If%20you%20are%20a%20junior%20front-end%20develop%20don't%20hesitate%20to%20improve%20our%20current%20code!👉👉👉" + "%20https://github.com/Adalab/easley-s2-undefined";
+    }) */
+
+
+
 
   imageClick(event) {
     event.preventDefault();
@@ -78,7 +128,7 @@ class App extends Component {
   }
 
   handleColorChange(e) {
-    const checkedColor = e.currentTarget.value;
+    const checkedColor = parseInt(e.currentTarget.value);
     this.setState((prevState) => {
       return {
         dataObject: {
@@ -90,7 +140,7 @@ class App extends Component {
   }
 
   handleFontChange(e) {
-    const checkedFont = e.currentTarget.value;
+    const checkedFont = parseInt(e.currentTarget.value);
     this.setState((prevState) => {
       return {
         dataObject: {
@@ -201,6 +251,11 @@ class App extends Component {
             //Here start props for radiobuttons
             handleColorChange={this.handleColorChange}
             handleFontChange={this.handleFontChange}
+            //Logic to create card and backend
+            sendToBackend={this.sendToBackend}
+            openShareBtn={this.state.shareBtnClass}
+            linkTwitter={this.state.linkTwitter}
+            linkShare= {this.state.linkShare}
           />
         </main>
         <Footer

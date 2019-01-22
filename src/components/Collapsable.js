@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 class Collapsable extends React.Component {
     render () {
         return (
-            <li className={`section2__list--collapsible ${this.props.block} open`}
+            <li className={`section2__list--collapsible ${this.props.block} open ${this.props.openShareBtn}`}
             onClick={this.props.functionHandler}>
               <div id={this.props.numberChild} className="collapsible"
              >

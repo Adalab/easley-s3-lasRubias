@@ -7,7 +7,7 @@ class Fonts extends Component {
                 <div className="section2__design--titles">Fonts</div>
                 <div className="fontfamily__types">
                     <form id="font-form">
-                        <label for="font__option--1" className="fontfamily__options">
+                        <label htmlFor="font__option--1" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
                                 className="formdesign__circle checkbox"
@@ -18,7 +18,7 @@ class Fonts extends Component {
                             />
                             <span className="ubuntu">Ubuntu</span>
                         </label>
-                        <label for="font__option--2" className="fontfamily__options">
+                        <label htmlFor="font__option--2" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
                                 className="formdesign__circle checkbox"
@@ -29,7 +29,7 @@ class Fonts extends Component {
                             />
                             <span className="comic-sans">Comic Sans</span>
                         </label>
-                        <label for="font__option--3" className="fontfamily__options">
+                        <label htmlFor="font__option--3" className="fontfamily__options">
                             <input
                                 onChange={this.props.handleFontChange}
                                 className="formdesign__circle checkbox"
