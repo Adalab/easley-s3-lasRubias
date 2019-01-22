@@ -37,7 +37,8 @@ class App extends Component {
         ...defaultDataObject
       },
       shareBtnClass: "",
-      linkTwitter: ""
+      linkTwitter: "",
+      linkShare: ""
     }
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
@@ -82,7 +83,8 @@ class App extends Component {
         }
         this.setState({
           shareBtnClass: "add_height",
-          linkTwitter: twitterHref
+          linkTwitter: twitterHref,
+          linkShare: createdCardURL
         })
       })
 
@@ -253,6 +255,7 @@ class App extends Component {
             sendToBackend={this.sendToBackend}
             openShareBtn={this.state.shareBtnClass}
             linkTwitter={this.state.linkTwitter}
+            linkShare= {this.state.linkShare}
           />
         </main>
         <Footer
