@@ -17,7 +17,7 @@ class Form extends Component {
       const selectedBlock = event.currentTarget;
       const classes = selectedBlock.classList;
       let openEl;
-
+    //console.dir(selectedBlock.childNodes.classList.contains('collapsible'));
       if(classes.contains('first_block')){
         openEl = 'first_block';
         // if(classes.contains('open')){
