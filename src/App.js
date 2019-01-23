@@ -101,15 +101,6 @@ class App extends Component {
 
   }
 
-  /*   .then(res => res.json())
-      .then(response => {
-  
-        cardLink.innerHTML = response.cardURL;
-  
-        tweetbutton.href = 'https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨' + response.cardURL + "✨" + "%20feeling%20more%20curious?%20👀If%20you%20are%20a%20junior%20front-end%20develop%20don't%20hesitate%20to%20improve%20our%20current%20code!👉👉👉" + "%20https://github.com/Adalab/easley-s2-undefined";
-      }) */
-
-
   imageClick(event) {
     event.preventDefault();
     this.fileInput.current.click();
