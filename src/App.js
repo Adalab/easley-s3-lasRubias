@@ -56,6 +56,20 @@ class App extends Component {
     this.sendToBackend = this.sendToBackend.bind(this);
   }
 
+  // getSavedData() {
+  //   const objectFromLocal = localStorage.getItem('dataObject');
+
+  //   if (objectFromLocal !== null) {
+  //     return JSON.parse(objectFromLocal);
+  //   } else {
+  //     defaultDataObject
+  //   }
+  // }
+
+  saveData(data) {
+    localStorage.setItem('data', JSON.stringify(data));
+  }
+
   sendToBackend() {
     const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
     const dataFromObject = this.state.dataObject;
@@ -106,13 +120,21 @@ class App extends Component {
   writeImage() {
     const url = fr.result;
     this.setState((prevState) => {
+
+
+      const newDataObject = {
+        ...prevState.dataObject,
+        photo: url
+      };
+
+      this.saveData(newDataObject);
+      
       return {
-        dataObject: {
-          ...prevState.dataObject,
-          photo: url
-        }
+        dataObject: newDataObject
       }
     })
+
+
   }
 
   handleImageChange(event) {
@@ -124,11 +146,16 @@ class App extends Component {
   handleColorChange(e) {
     const checkedColor = parseInt(e.currentTarget.value);
     this.setState((prevState) => {
+
+      const newDataObject = {
+        ...prevState.dataObject,
+        palette: checkedColor
+      }
+
+      this.saveData(newDataObject);
+      
       return {
-        dataObject: {
-          ...prevState.dataObject,
-          palette: checkedColor
-        }
+        dataObject: newDataObject
       }
     })
   }
@@ -136,11 +163,16 @@ class App extends Component {
   handleFontChange(e) {
     const checkedFont = parseInt(e.currentTarget.value);
     this.setState((prevState) => {
+
+      const newDataObject = {
+        ...prevState.dataObject,
+        typography: checkedFont
+      }
+
+      this.saveData(newDataObject);
+      
       return {
-        dataObject: {
-          ...prevState.dataObject,
-          typography: checkedFont
-        }
+        dataObject: newDataObject
       }
     })
   }
@@ -174,11 +206,16 @@ class App extends Component {
           auxList.push(skillValue);
         }
       }
+
+      const newDataObject = {
+        ...prevState.dataObject,
+        skills: auxList
+      }
+
+      this.saveData(newDataObject);
+
       return {
-        dataObject: {
-          ...prevState.dataObject,
-          skills: auxList
-        }
+        dataObject: newDataObject
       }
     })
   }
@@ -186,11 +223,16 @@ class App extends Component {
   update(event) {
     const { value, name } = event.target;
     this.setState((prevState) => {
+
+      const newDataObject = {
+        ...prevState.dataObject,
+        [name]: value,
+      }
+
+      this.saveData(newDataObject);
+
       return {
-        dataObject: {
-          ...prevState.dataObject,
-          [name]: value,
-        }
+        dataObject: newDataObject
       }
     });
   }
