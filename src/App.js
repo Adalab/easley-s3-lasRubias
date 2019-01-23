@@ -29,8 +29,6 @@ const twitterModel = "https://twitter.com/intent/tweet?text=I%20have%20created%2
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.fileInput = React.createRef();
     this.state = {
       allSkills: [],
       dataObject: {
@@ -40,11 +38,12 @@ class App extends Component {
       linkTwitter: "",
       linkShare: ""
     }
+    this.fileInput = React.createRef();
+    
     this.getSkills();
     this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
     this.resetState = this.resetState.bind(this);
-
     this.unCheck = this.unCheck.bind(this)
     //Here start binds for image logic
     this.imageClick = this.imageClick.bind(this);
@@ -58,27 +57,26 @@ class App extends Component {
   }
 
   sendToBackend() {
-     const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    const backendUrl = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
     const dataFromObject = this.state.dataObject;
     fetch(backendUrl, {
-        method: 'POST',
-        body: JSON.stringify(dataFromObject),
-        headers: {
-          'content-type': 'application/json'
-        }
-      })
+      method: 'POST',
+      body: JSON.stringify(dataFromObject),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
       .then(res => {
         if (!res.ok) {
           throw (res);
         }
         return res.json();
       })
-      .then( response => {
+      .then(response => {
         const createdCardURL = response.cardURL;
-        console.log(createdCardURL);
         let twitterHref = "";
-        
-        if(createdCardURL !== null) {
+
+        if (createdCardURL !== null) {
           twitterHref = twitterModel + createdCardURL;
         }
         this.setState({
@@ -87,20 +85,17 @@ class App extends Component {
           linkShare: createdCardURL
         })
       })
-
       .catch(err => console.log('error', err));
-     
+
   }
 
-/*   .then(res => res.json())
-    .then(response => {
-
-      cardLink.innerHTML = response.cardURL;
-
-      tweetbutton.href = 'https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨' + response.cardURL + "✨" + "%20feeling%20more%20curious?%20👀If%20you%20are%20a%20junior%20front-end%20develop%20don't%20hesitate%20to%20improve%20our%20current%20code!👉👉👉" + "%20https://github.com/Adalab/easley-s2-undefined";
-    }) */
-
-
+  /*   .then(res => res.json())
+      .then(response => {
+  
+        cardLink.innerHTML = response.cardURL;
+  
+        tweetbutton.href = 'https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨' + response.cardURL + "✨" + "%20feeling%20more%20curious?%20👀If%20you%20are%20a%20junior%20front-end%20develop%20don't%20hesitate%20to%20improve%20our%20current%20code!👉👉👉" + "%20https://github.com/Adalab/easley-s2-undefined";
+      }) */
 
 
   imageClick(event) {
@@ -122,7 +117,6 @@ class App extends Component {
 
   handleImageChange(event) {
     const myImage = event.currentTarget.files[0];
-
     fr.addEventListener('load', this.writeImage);
     fr.readAsDataURL(myImage);
   }
@@ -151,7 +145,7 @@ class App extends Component {
     })
   }
 
-
+  //fetch para obtener las skills
   getSkills() {
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
       .then(response => response.json())
@@ -165,13 +159,13 @@ class App extends Component {
   //metodo para seleccionar y des-seleccionar las skills
   handleChange(event) {
     const skillValue = event.target.value;
-    if (this.state.dataObject.skills.length === 3) {
+    const { dataObject } = this.state;
+    if (dataObject.skills.length === 3) {
       event.target.checked = false;
     }
     this.setState((prevState) => {
       let auxList = prevState.dataObject.skills;
       let index = auxList.indexOf(skillValue);
-      console.log(index);
 
       if (index > -1) {
         auxList.splice(index, 1);
@@ -180,7 +174,6 @@ class App extends Component {
           auxList.push(skillValue);
         }
       }
-      console.log(auxList);
       return {
         dataObject: {
           ...prevState.dataObject,
@@ -188,14 +181,10 @@ class App extends Component {
         }
       }
     })
-    console.log('skills', defaultDataObject.skills);
-
   }
 
   update(event) {
-    console.log(event.target.value);
     const { value, name } = event.target;
-
     this.setState((prevState) => {
       return {
         dataObject: {
@@ -206,16 +195,16 @@ class App extends Component {
     });
   }
 
+  //resetar los inputs tipo check
   unCheck = () => {
     let checkEl = document.getElementsByClassName('checkbox');
     const myArray = Array.from(checkEl);
     myArray.map(el =>
-      //console.log('ELEMENT', el);
       el.checked = false
     )
-    //console.log('checkel', checkEl);
   }
 
+  //resetear la tarjeta
   resetState() {
     this.unCheck();
     defaultDataObject.skills = [];
@@ -227,18 +216,19 @@ class App extends Component {
   }
 
   render() {
+    const { dataObject, allSkills, shareBtnClass, linkTwitter, linkShare } = this.state;
     return (
       <div>
         <Header logo={logo} />
         <main className="main__container">
           <Card
-            data={this.state.dataObject}
-            imageBg={{ backgroundImage: `url(${this.state.dataObject.photo})` }}
+            data={dataObject}
+            imageBg={{ backgroundImage: `url(${dataObject.photo})` }}
             reset={this.resetState}
           />
           <Form
-            data={this.state.dataObject}
-            skills={this.state.allSkills}
+            data={dataObject}
+            skills={allSkills}
             handleChange={this.handleChange}
             formUpdate={this.update}
 
@@ -246,16 +236,16 @@ class App extends Component {
             imageLoad={this.imageClick}
             handleImageChange={this.handleImageChange}
             refForInput={this.fileInput}
-            imageBg={{ backgroundImage: `url(${this.state.dataObject.photo})` }}
+            imageBg={{ backgroundImage: `url(${dataObject.photo})` }}
 
             //Here start props for radiobuttons
             handleColorChange={this.handleColorChange}
             handleFontChange={this.handleFontChange}
             //Logic to create card and backend
             sendToBackend={this.sendToBackend}
-            openShareBtn={this.state.shareBtnClass}
-            linkTwitter={this.state.linkTwitter}
-            linkShare= {this.state.linkShare}
+            openShareBtn={shareBtnClass}
+            linkTwitter={linkTwitter}
+            linkShare={linkShare}
           />
         </main>
         <Footer

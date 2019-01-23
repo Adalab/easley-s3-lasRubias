@@ -5,23 +5,62 @@ import StyleContainer from "./StyleContainer";
 import ListSkills from "./ListSkills";
 
 class Form extends Component {
-  render () {
-      console.log(this.props);
-      const dataObject = this.props.data;
-      const {imageLoad, handleImageChange, refForInput, imageBg} = this.props;
-        return (
-          <section className="card__section2">
-          <ul className="section2__list">
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCollapsible: 'first_block',
+    }
+    this.handleCollapsible = this.handleCollapsible.bind(this);
+  }
+
+  handleCollapsible (event) {
+      const selectedBlock = event.currentTarget;
+      const classes = selectedBlock.classList;
+      let openEl;
+      if(classes.contains('first_block')){
+        openEl = 'first_block';
+      } else if (classes.contains('second_block')){
+        openEl = 'second_block';
+      } else if (classes.contains('third_block')){
+        openEl = 'third_block';
+      }
+
+      this.setState({
+        activeCollapsible: openEl
+      })
+  }
+
+  render() {
+    const dataObject = this.props.data;
+    const {imageLoad, handleImageChange, handleColorChange, handleFontChange, refForInput, imageBg, formUpdate, handleChange, openShareBtn, sendToBackend, linkShare, linkTwitter} = this.props;
+    
+    let open_first = false;
+    let open_second = false;
+    let open_third = false;
+
+    if (this.state.activeCollapsible === 'first_block') {
+      open_first = true;
+    } else if (this.state.activeCollapsible === 'second_block'){
+      open_second = true;
+    } else if (this.state.activeCollapsible === 'third_block'){
+      open_third = true;
+    }
+
+    return (
+      <section className="card__section2">
+        <ul className="section2__list">
           <Collapsable
-            block="first_block open"
+            block="first_block"
             numberChild="first_child"
             icoSection="far fa-object-ungroup icon__card-page"
             titleSection="design"
+            isOpen={open_first}
+            isSelected={this.handleCollapsible}
           >
             <StyleContainer 
             dataObject={dataObject} 
-            handleColorChange={this.props.handleColorChange}
-            handleFontChange={this.props.handleFontChange}
+            handleColorChange={handleColorChange}
+            handleFontChange={handleFontChange}
             />
           </Collapsable>
           <Collapsable
@@ -29,14 +68,16 @@ class Form extends Component {
             numberChild="second_child"
             icoSection="fas fa-keyboard icon__card-page"
             titleSection="complete"
+            isOpen={open_second}
+            isSelected={this.handleCollapsible}
           >
           <div className="content">
                 <form action="" id="form">
                   <div className="titles__complete-form"><label htmlFor="email">Full name</label></div>
-                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} /></div>
+                  <div><input onChange={formUpdate} className="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" value={`${dataObject.name}`} /></div>
 
                   <div className="titles__complete-form"><label htmlFor="email">Job position</label></div>
-                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
+                  <div><input onChange={formUpdate} className="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
                     type="text" name="job" value={`${dataObject.job}`}   /></div>
 
                   <div className="titles__complete-form"><label htmlFor="image">Profile image</label></div>
@@ -47,7 +88,7 @@ class Form extends Component {
                   </div>
 
                   <div className="titles__complete-form"><label htmlFor="email">Email</label></div>
-                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
+                  <div><input onChange={formUpdate} className="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email-input"
                     type="email" name="email" value={`${dataObject.email}`}  /></div>
 
                   <div className="titles__complete-form"><label htmlFor="telf_movil">Telephone number</label></div>
@@ -59,14 +100,14 @@ class Form extends Component {
                     id="linkedin-input" type="email" name="linkedin" value={`${dataObject.linkedin}`} /></div>
 
                   <div className="titles__complete-form"><label htmlFor="email">GitHub</label></div>
-                  <div><input onChange={this.props.formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
+                  <div><input onChange={formUpdate} className="section2__completeform--input" placeholder="Ex: sally-hill"
                     id="github-input" type="email" name="github" value={`${dataObject.github}`} /></div>
 
                   <div className="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
                   <div id="container-checkboxes" className="titles__complete-form">
                   <ul>
                     {this.props.skills.map(skill => (
-                      <ListSkills skill={skill} handleChange={this.props.handleChange} />
+                      <ListSkills skill={skill} handleChange={handleChange} />
                       )
                     )}
                   </ul></div>
@@ -80,10 +121,12 @@ class Form extends Component {
             numberChild="third_child"
             icoSection="fas fa-share-alt icon__card-page"
             titleSection="share"
-            openShareBtn={this.props.openShareBtn}
+            isOpen={open_third}
+            isSelected={this.handleCollapsible}
+            openShareBtn={openShareBtn}
           >
             <div className="content button_container">
-              <button className="button__create-card" onClick={this.props.sendToBackend}>
+              <button className="button__create-card" onClick={sendToBackend}>
                 <i className="far fa-id-card" />
                  <span> Create visit card</span> 
               </button>
@@ -91,12 +134,12 @@ class Form extends Component {
                 <div className="title__card--created">
                   The card has been created
                 </div>
-                <a className="title__card--link" href={this.props.linkShare} target="_blank">
-                  {this.props.linkShare}
+                <a className="title__card--link" href={linkShare} target="_blank">
+                  {linkShare}
                 </a>
                 <button className="button__twitter">
                   <i className="fab fa-twitter" />
-                  <a className="twitter" href={this.props.linkTwitter} target="_blank"> Share on twitter</a>
+                  <a className="twitter" href={linkTwitter} target="_blank"> Share on twitter</a>
                 </button>
               </div>
             </div>
