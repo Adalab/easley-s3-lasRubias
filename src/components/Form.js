@@ -17,7 +17,6 @@ class Form extends Component {
       const selectedBlock = event.currentTarget;
       const classes = selectedBlock.classList;
       let openEl;
-    //console.dir(selectedBlock.childNodes.classList.contains('collapsible'));
       if(classes.contains('first_block')){
         openEl = 'first_block';
         // if(classes.contains('open')){
@@ -127,22 +126,23 @@ class Form extends Component {
             titleSection="share"
             isOpen={open_third}
             isSelected={this.handleCollapsible}
+            openShareBtn={this.props.openShareBtn}
           >
             <div className="content button_container">
-              <button className="button__create-card">
+              <button className="button__create-card" onClick={this.props.sendToBackend}>
                 <i className="far fa-id-card" />
-                <a> Create visit card</a>
+                 <span> Create visit card</span> 
               </button>
               <div className="create__mesage">
                 <div className="title__card--created">
                   The card has been created
                 </div>
-                <a className="title__card--link">
-                  Share the card with your friends!
+                <a className="title__card--link" href={this.props.linkShare} target="_blank">
+                  {this.props.linkShare}
                 </a>
                 <button className="button__twitter">
                   <i className="fab fa-twitter" />
-                  <a className="twitter"> Share on twitter</a>
+                  <a className="twitter" href={this.props.linkTwitter} target="_blank"> Share on twitter</a>
                 </button>
               </div>
             </div>

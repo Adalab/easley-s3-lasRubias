@@ -5,11 +5,11 @@ class Card extends Component {
   chosenPalette() {
     const palette = this.props.data.palette;
     let colorCard = "";
-    if (palette === "1") {
+    if (palette === 1) {
       colorCard = "green";
-    } else if (palette === "2") {
+    } else if (palette === 2) {
       colorCard = "red";
-    } else if (palette === "3") {
+    } else if (palette === 3) {
       colorCard = "gray";
     }
     return colorCard;
@@ -18,11 +18,11 @@ class Card extends Component {
   chosenFont() {
     const font = this.props.data.typography;
     let fontCard = "";
-    if (font === "1") {
+    if (font === 1) {
       fontCard = "font-ubuntu";
-    } else if (font === "2") {
+    } else if (font === 2) {
       fontCard = "font-comic";
-    } else if (font === "3") {
+    } else if (font === 3) {
       fontCard = "font-montserrat";
     }
     return fontCard;
@@ -34,7 +34,7 @@ class Card extends Component {
     return (
       <section className="profile">
         <div className="profile__container">
-          <button className="profile__action">
+          <button className="profile__action" onClick={this.props.reset}>
             <i className="far fa-trash-alt" />
             <span className="profile__action-text">Reset</span>
           </button>
