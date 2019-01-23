@@ -1,4 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import logo from './images/descarga.svg';
+import logoUndefined from './images/undefined-logo.svg';
+import logoAdalab from './images/logo-adalab.svg';
 import { Link } from 'react-router-dom';
 
 class PageHome extends Component {
@@ -6,7 +9,7 @@ class PageHome extends Component {
         return (
             <Fragment>
                 <header className="header-index">
-                    <img className="logo_awesome" src="assets/images/descarga.svg" alt="" />
+                    <img className="logo_awesome" src={logo} alt="" />
                 </header>
                 <main className="main-index">
                     <div className="text_create-card">
@@ -38,8 +41,8 @@ class PageHome extends Component {
                 <footer className="footer-index @@footer">
                     <div className="copyright-index">Awesome profile cards @2018</div>
                     <div className="footer__logos">
-                        <div className="footer__logo"><img className="logo-undefined" src="assets/images/undefined-logo.svg" alt="Undefined logo" /></div>
-                        <a className="footer__logo" href="https://adalab.es/"><img className="logo-adalab" src="assets/images/logo-adalab.svg" alt="Adalab logo" /></a>
+                        <div className="footer__logo"><img className="logo-undefined" src={logoUndefined} alt="Undefined logo" /></div>
+                        <a className="footer__logo" href="https://adalab.es/"><img className="logo-adalab" src={logoAdalab} alt="Adalab logo" /></a>
                     </div>
                 </footer>
             </Fragment>
