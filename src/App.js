@@ -31,9 +31,7 @@ class App extends Component {
     super(props);
     this.state = {
       allSkills: [],
-      dataObject: {
-        ...defaultDataObject
-      },
+      dataObject: this.getSavedData(),
       shareBtnClass: "",
       linkTwitter: "",
       linkShare: ""
@@ -56,18 +54,18 @@ class App extends Component {
     this.sendToBackend = this.sendToBackend.bind(this);
   }
 
-  // getSavedData() {
-  //   const objectFromLocal = localStorage.getItem('dataObject');
+  getSavedData() {
+    const objectFromLocalStorage = localStorage.getItem('dataObject');
 
-  //   if (objectFromLocal !== null) {
-  //     return JSON.parse(objectFromLocal);
-  //   } else {
-  //     defaultDataObject
-  //   }
-  // }
+    if (objectFromLocalStorage !== null) {
+      return JSON.parse(objectFromLocalStorage);
+    } else {
+      return defaultDataObject
+    }
+  }
 
   saveData(data) {
-    localStorage.setItem('data', JSON.stringify(data));
+    localStorage.setItem('dataObject', JSON.stringify(data));
   }
 
   sendToBackend() {
@@ -250,6 +248,7 @@ class App extends Component {
   resetState() {
     this.unCheck();
     defaultDataObject.skills = [];
+    localStorage.clear('dataObject');
     this.setState({
       dataObject: {
         ...defaultDataObject
