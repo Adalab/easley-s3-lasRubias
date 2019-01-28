@@ -69,20 +69,12 @@
   margin-top: 10px;
   margin-bottom: 30px;
   transition: .3s ease-in-out;
+  color: $color_main_pureWhite;
   &:hover {
     background-color: $color_green_Dark;
     transform: translateY(5px);
     cursor: pointer;
   }
-}
-
-.btn-start_a {
-  color: $color_main_pureWhite;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: $font-weight_semi-bold;
-  font-family: $font-family_main;
-  margin-top: 38px;
 }
 
 .btn-start_center {

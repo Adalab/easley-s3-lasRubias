@@ -620,22 +620,12 @@ ol {
   display: inline-block;
   text-align: center;
 }
-.list_item.green {
+.profile__data.green .list_item {
   background-color: $color_green_Medium;
 }
-.list_item.red {
+.profile__data.red .list_item {
   background-color: $color_red_Light;
 }
-.list_item.gray {
-  background-color: $color_gray_Light;
-}
-
-.list_skills.green .list_item {
-  background-color: $color_green_Medium;
-}
-.list_skills.red .list_item {
-  background-color: $color_red_Light;
-}
-.list_skills.gray .list_item {
+.profile__data.gray .list_item {
   background-color: $color_gray_Light;
 }
