@@ -32,7 +32,7 @@ class Palettes extends Component {
                             name="palette__color"
                         />
                         <div className="palette__triple--box">
-                            <div class="palette__dimensions palette__red--dark" />
+                            <div className="palette__dimensions palette__red--dark" />
                             <div className="palette__dimensions palette__red--medium" />
                             <div className="palette__dimensions palette__red--light" />
                         </div>

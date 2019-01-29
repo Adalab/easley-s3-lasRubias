@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class StyleContainer extends Component {
     render() {
-        console.log(this.props);
+        
         const colors = this.props.dataObject.palette;
         const fonts = this.props.dataObject.typography;
         return (
@@ -24,9 +24,9 @@ class StyleContainer extends Component {
 }
 
 StyleContainer.propTypes ={
-    block: PropTypes.string.isRequired,
-    numberChild: PropTypes.string.isRequired,
-    icoSection: PropTypes.string.isRequired,
+    block: PropTypes.string,
+    numberChild: PropTypes.string,
+    icoSection: PropTypes.string,
 }
 
 export default StyleContainer;

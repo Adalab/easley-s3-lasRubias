@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class ListSkills extends Component {
     render() {
         return (
-            <li>
+            <li key={this.key}>
                 <input type="checkbox" className='checkbox' value={this.props.skill} onChange={this.props.handleChange}/>
                 {this.props.skill}
             </li>
