@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 class Footer extends Component {
     render(){
+        
         return (
         <footer className="footer-index @@footer">
           <div className="copyright-index">Awesome profile cards @2018</div>
