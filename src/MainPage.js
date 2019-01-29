@@ -26,7 +26,7 @@ const defaultDataObject = {
 const twitterModel = "https://twitter.com/intent/tweet?text=I%20have%20created%20this%20card%20using%20Awesome%20Profile%20Card%20from%20undefined-team!%20✨";
 
 
-class App extends Component {
+class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -289,4 +289,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default MainPage;
