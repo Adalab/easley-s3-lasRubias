@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "../scss/main.scss";
+import PropTypes from 'prop-types';
 
 class Card extends Component {
+  
   chosenPalette() {
     const palette = this.props.data.palette;
     let colorCard = "";
@@ -29,9 +31,11 @@ class Card extends Component {
   }
 
   render() {
-    console.log(this.props);
+    
     const { data, imageBg } = this.props;
+   
     return (
+      
       <section className="profile">
         <div className="profile__container">
           <button className="profile__action" onClick={this.props.reset}>
@@ -113,4 +117,9 @@ class Card extends Component {
   }
 }
 
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+  imageBg: PropTypes.object.isRequired,
+  reset: PropTypes.func.isRequired
+};
 export default Card;

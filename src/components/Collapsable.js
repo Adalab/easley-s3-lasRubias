@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Collapsable extends React.Component {
     isCollapsed () {
-        console.log(this.props.isOpen);
+        
         return this.props.isOpen ? 'open' : '';        
     }
     render () {

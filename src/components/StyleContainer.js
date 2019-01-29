@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Palettes from "./Palettes";
 import Fonts from "./Fonts";
+import PropTypes from 'prop-types';
 
 class StyleContainer extends Component {
     render() {
+        console.log(this.props);
         const colors = this.props.dataObject.palette;
         const fonts = this.props.dataObject.typography;
         return (
@@ -19,6 +21,12 @@ class StyleContainer extends Component {
             </div>
         );
     }
+}
+
+StyleContainer.propTypes ={
+    block: PropTypes.string.isRequired,
+    numberChild: PropTypes.string.isRequired,
+    icoSection: PropTypes.string.isRequired,
 }
 
 export default StyleContainer;

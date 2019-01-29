@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ListSkills extends Component {
     render() {
@@ -9,6 +10,11 @@ class ListSkills extends Component {
             </li>
         )
     }
+}
+
+ListSkills.propTypes ={
+    skill: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired,
 }
 
 export default ListSkills;

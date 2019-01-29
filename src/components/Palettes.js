@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Palettes extends Component {
     render() {
@@ -55,6 +56,10 @@ class Palettes extends Component {
             </div>
         );
     }
+}
+
+Palettes.propTypes ={
+    handleColorChange: PropTypes.func.isRequired,
 }
 
 export default Palettes;
