@@ -1,27 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
 
 class Footer extends Component {
-    render(){
-        
+    render() {
+
         return (
-        <footer className="footer-index @@footer">
-          <div className="copyright-index">Awesome profile cards @2018</div>
-          <div className="footer__logos">
-            <div className="footer__logo">
-                <img className="logo-undefined" src={this.props.logoTeam} alt="Undefined logo" />
-            </div>
-            <a className="footer__logo" href="https://adalab.es/">
-                <img className="logo-adalab" src={this.props.logoAdalab} alt="Adalab logo" />
-            </a>
-          </div>
-        </footer>
+            <footer className="footer-index @@footer">
+                <div className="copyright-index">Awesome profile cards @2018</div>
+                <div className="footer__logos">
+                    <div className="footer__logo">
+                        <img className="logo-undefined" src={this.props.logoTeam} alt="Undefined logo" />
+                    </div>
+                    <a className="footer__logo" href="https://adalab.es/">
+                        <img className="logo-adalab" src={this.props.logoAdalab} alt="Adalab logo" />
+                    </a>
+                </div>
+            </footer>
         )
     }
 }
 
-Footer.propTypes ={
+Footer.propTypes = {
     logoTeam: PropTypes.string.isRequired,
     logoAdalab: PropTypes.string.isRequired
 }

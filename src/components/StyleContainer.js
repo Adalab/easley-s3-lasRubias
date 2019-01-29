@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class StyleContainer extends Component {
     render() {
-        
+
         const colors = this.props.dataObject.palette;
         const fonts = this.props.dataObject.typography;
         return (
@@ -14,8 +14,8 @@ class StyleContainer extends Component {
                     colors={colors}
                     handleColorChange={this.props.handleColorChange}
                 />
-                <Fonts 
-                    fonts={fonts} 
+                <Fonts
+                    fonts={fonts}
                     handleFontChange={this.props.handleFontChange}
                 />
             </div>
@@ -23,7 +23,7 @@ class StyleContainer extends Component {
     }
 }
 
-StyleContainer.propTypes ={
+StyleContainer.propTypes = {
     block: PropTypes.string,
     numberChild: PropTypes.string,
     icoSection: PropTypes.string,

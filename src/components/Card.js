@@ -3,7 +3,7 @@ import "../scss/main.scss";
 import PropTypes from 'prop-types';
 
 class Card extends Component {
-  
+
   chosenPalette() {
     const palette = this.props.data.palette;
     let colorCard = "";
@@ -31,11 +31,11 @@ class Card extends Component {
   }
 
   render() {
-    
+
     const { data, imageBg } = this.props;
-   
+
     return (
-      
+
       <section className="profile">
         <div className="profile__container">
           <button className="profile__action" onClick={this.props.reset}>
@@ -106,8 +106,8 @@ class Card extends Component {
             </ul>
             <div className="border_bottom" />
             <ul id="container-checkboxes-card" className="list_skills">
-              {data.skills.map(skill => (
-                <li className="list_item">{skill}</li>
+              {data.skills.map((skill, i) => (
+                <li key={i} className="list_item">{skill}</li>
               ))}
             </ul>
           </div>

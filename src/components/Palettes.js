@@ -58,7 +58,7 @@ class Palettes extends Component {
     }
 }
 
-Palettes.propTypes ={
+Palettes.propTypes = {
     handleColorChange: PropTypes.func.isRequired,
 }
 

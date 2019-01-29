@@ -33,9 +33,9 @@ class PageHome extends Component {
                         </ul>
                     </nav>
                     <div className="btn-start_center">
-                    <Link to="/main">
-                    <button className="btn-start">START</button>
-                    </Link>
+                        <Link to="/main">
+                            <button className="btn-start">START</button>
+                        </Link>
                     </div>
                 </main>
                 <footer className="footer-index @@footer">

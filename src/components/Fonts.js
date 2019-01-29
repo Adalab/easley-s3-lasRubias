@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 class Fonts extends Component {
-   
+
     render() {
-        
+
         return (
             <div className="fonts__container">
                 <div className="section2__design--titles">Fonts</div>
@@ -51,8 +51,8 @@ class Fonts extends Component {
 }
 
 Fonts.propTypes = {
-    fonts: PropTypes.object.isRequired,
+    fonts: PropTypes.number.isRequired,
     handleFontChange: PropTypes.func.isRequired,
-  };
+};
 
 export default Fonts;
